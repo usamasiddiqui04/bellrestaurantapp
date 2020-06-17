@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:background="#ffffff"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:textSize="30sp"
+            android:id="@+id/welcome"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:text="Welcome"
+            android:layout_marginLeft="15dp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="16sp"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/cont"
+            app:layout_constraintTop_toBottomOf="@id/welcome"
+            android:text="Online Registration Form"
+            android:layout_marginLeft="15dp">
+        </TextView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:id="@+id/layoutone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cont">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                style="@style/MyTextInputLayout"
+                app:helperText="Mandatory"
+                android:textColorHint="@android:color/darker_gray"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:drawablePadding="15dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:drawableEnd="@drawable/ic_baseline_fastfood_24"
+                    android:background="@android:color/white"
+                    android:hint="Restaurant name"
+                    android:maxLines="1"
+                    android:inputType="textEmailAddress"
+                    android:drawableRight="@drawable/ic_baseline_fastfood_24" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:id="@+id/layouttwo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutone">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                style="@style/MyTextInputLayout"
+                app:helperText="min. 1000 letters (Mandatory)"
+                android:textColor="@android:color/darker_gray"
+                android:textColorHint="@android:color/darker_gray"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:background="@android:color/white"
+                    android:hint="Restaurant Description" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:id="@+id/layoutthree"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layouttwo">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                style="@style/MyTextInputLayout"
+                app:helperText="Mandatory"
+                android:textColor="@android:color/darker_gray"
+                android:textColorHint="@android:color/darker_gray"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:drawablePadding="15dp"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:drawableEnd="@drawable/ic_outline_email_24"
+                    android:background="@android:color/white"
+                    android:hint="Email address"
+                    android:maxLines="1"
+                    android:inputType="textEmailAddress"
+                    android:drawableRight="@drawable/ic_outline_email_24" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:id="@+id/layoutfour"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutthree">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                style="@style/MyTextInputLayout"
+                app:helperText="With country code 923xxxxxxxxx (Mandatory)"
+                android:textColorHint="@android:color/darker_gray"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:drawablePadding="15dp"
+                    android:maxLength="14"
+                    android:id="@+id/number"
+                    android:textColor="@android:color/darker_gray"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:drawableEnd="@drawable/ic_outline_phone_iphone_24"
+                    android:background="@android:color/white"
+                    android:hint="Phone number"
+                    android:maxLines="1"
+                    android:inputType="phone"
+                    android:drawableRight="@drawable/ic_outline_phone_iphone_24" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:id="@+id/constraint"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutfour">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.48"
+                style="@style/MyTextInputLayout"
+                android:id="@+id/city"
+                app:helperText="Mandatory"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColorHint="@android:color/darker_gray"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:drawablePadding="15dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:background="@android:color/white"
+                    android:hint="City"
+                    android:maxLines="1"
+                    android:inputType="textEmailAddress"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.48"
+                style="@style/MyTextInputLayout"
+                android:id="@+id/province"
+                app:helperText="Mandatory"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColorHint="@android:color/darker_gray"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:drawablePadding="15dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:background="@android:color/white"
+                    android:hint="Province"
+                    android:maxLines="1"
+                    android:inputType="textEmailAddress"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.48"
+                style="@style/MyTextInputLayout"
+                android:id="@+id/postalcode"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/city"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColorHint="@android:color/darker_gray"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:drawablePadding="15dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:background="@android:color/white"
+                    android:hint="Postal/Zip code"
+                    android:maxLines="1"
+                    android:inputType="textEmailAddress"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.hbb20.CountryCodePicker
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:gravity="center"
+                app:ccp_arrowColor="@color/colorPrimary"
+                app:ccp_showFullName="true"
+                app:ccp_showPhoneCode="false"
+                app:ccp_showNameCode="false"
+                android:id="@+id/countrycodepicker"
+                app:ccp_autoDetectCountry="true"
+                android:background="@drawable/backgroundtext"
+                android:layout_marginTop="14dp"
+                app:layout_constraintWidth_percent="0.48"
+                app:layout_constraintTop_toBottomOf="@id/province"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                style="@style/MyTextInputLayout"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/postalcode"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColorHint="@android:color/darker_gray"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:drawablePadding="15dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:background="@android:color/white"
+                    android:hint="Website URL"
+                    android:inputType="textMultiLine"
+                    android:lines="1"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:src="@drawable/ic_baseline_navigate_next_24"
+            android:layout_marginTop="25dp"
+            android:text="Continue"
+            android:textSize="18sp"
+            android:id="@+id/next"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/button_rounded"
+            android:layout_marginStart="15dp"
+            android:layout_gravity="end|bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraint" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

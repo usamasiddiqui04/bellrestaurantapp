@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".WorkinghoursActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:background="#ffffff"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:textSize="30sp"
+            android:id="@+id/welcome"
+            android:textColor="@color/colorPrimary"
+            android:text="Select Working Hours"
+            android:layout_marginLeft="15dp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="16sp"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/cont"
+            app:layout_constraintTop_toBottomOf="@id/welcome"
+            android:text="Online Registration Form"
+            android:layout_marginLeft="15dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/cont"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="15dp"
+            android:id="@+id/mondaytofriday"
+            android:text="Monday to Friday">
+
+        </TextView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:padding="20dp"
+            android:id="@+id/timelayout"
+            app:layout_constraintTop_toBottomOf="@id/mondaytofriday"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/backgroundtext"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_outline_timer_24"
+                app:layout_constraintStart_toEndOf="@id/from"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/timeimage"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:00"
+                android:textSize="16sp"
+                android:id="@+id/time"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/timeimage"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:id="@+id/from"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="form"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:id="@+id/to"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@id/time"
+                app:layout_constraintEnd_toEndOf="@id/timeimage2"
+                android:text="to"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_outline_timer_24"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toStartOf="@id/time2"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/timeimage2"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:00"
+                android:id="@+id/time2"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/timelayout"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="15dp"
+            android:id="@+id/saturaday"
+            android:text="Saturday">
+
+        </TextView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:padding="20dp"
+            android:id="@+id/timelayout2"
+            app:layout_constraintTop_toBottomOf="@id/saturaday"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/backgroundtext"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_outline_timer_24"
+                app:layout_constraintStart_toEndOf="@id/from2"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/timeimage3"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:00"
+                android:textSize="16sp"
+                android:id="@+id/time3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/timeimage3"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:id="@+id/from2"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="form"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:id="@+id/to2"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@id/time3"
+                app:layout_constraintEnd_toEndOf="@id/timeimage4"
+                android:text="to"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_outline_timer_24"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toStartOf="@id/time4"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/timeimage4"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:00"
+                android:id="@+id/time4"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/timelayout2"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="15dp"
+            android:id="@+id/sunday"
+            android:text="Sunday"/>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:padding="20dp"
+            android:id="@+id/timelayout3"
+            app:layout_constraintTop_toBottomOf="@id/sunday"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/backgroundtext"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_outline_timer_24"
+                app:layout_constraintStart_toEndOf="@id/from3"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/timeimage5"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:00"
+                android:textSize="16sp"
+                android:id="@+id/time5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/timeimage5"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:id="@+id/from3"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="form"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:id="@+id/to3"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@id/time5"
+                app:layout_constraintEnd_toEndOf="@id/timeimage6"
+                android:text="to"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_outline_timer_24"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toStartOf="@id/tim6"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/timeimage6"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:00"
+                android:id="@+id/tim6"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="16sp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/picupload"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@id/timelayout3"
+            android:text="Upload restaurant pictures"
+            android:layout_marginLeft="15dp">
+        </TextView>
+
+        <ImageView
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.3"
+            android:layout_height="120dp"
+            android:padding="30dp"
+            android:id="@+id/imageone"
+            android:layout_margin="10dp"
+            android:background="@drawable/backgroundtext"
+            android:src="@drawable/ic_baseline_add_a_photo_24"
+            app:layout_constraintTop_toBottomOf="@id/picupload"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add image"
+            app:layout_constraintBottom_toBottomOf="@id/imageone"
+            app:layout_constraintStart_toStartOf="@id/imageone"
+            app:layout_constraintEnd_toEndOf="@id/imageone"
+            android:layout_margin="15dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.3"
+            android:layout_height="120dp"
+            android:padding="30dp"
+            android:id="@+id/imagetwo"
+            android:layout_margin="10dp"
+            android:background="@drawable/backgroundtext"
+            android:src="@drawable/ic_baseline_add_a_photo_24"
+            app:layout_constraintTop_toBottomOf="@id/picupload"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add image"
+            app:layout_constraintBottom_toBottomOf="@id/imagetwo"
+            app:layout_constraintStart_toStartOf="@id/imagetwo"
+            app:layout_constraintEnd_toEndOf="@id/imagetwo"
+            android:layout_margin="15dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.3"
+            android:layout_height="120dp"
+            android:padding="30dp"
+            android:id="@+id/imagethree"
+            android:layout_margin="10dp"
+            android:background="@drawable/backgroundtext"
+            android:src="@drawable/ic_baseline_add_a_photo_24"
+            app:layout_constraintTop_toBottomOf="@id/picupload"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add image"
+            app:layout_constraintBottom_toBottomOf="@id/imagethree"
+            app:layout_constraintStart_toStartOf="@id/imagethree"
+            app:layout_constraintEnd_toEndOf="@id/imagethree"
+            android:layout_margin="15dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.3"
+            android:layout_height="120dp"
+            android:padding="30dp"
+            android:id="@+id/imagefour"
+            android:layout_margin="10dp"
+            android:background="@drawable/backgroundtext"
+            android:src="@drawable/ic_baseline_add_a_photo_24"
+            app:layout_constraintTop_toBottomOf="@id/imageone"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.3"
+            android:layout_height="120dp"
+            android:padding="30dp"
+            android:id="@+id/imagefive"
+            android:layout_margin="10dp"
+            android:background="@drawable/backgroundtext"
+            android:src="@drawable/ic_baseline_add_a_photo_24"
+            app:layout_constraintTop_toBottomOf="@id/imagetwo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add image"
+            app:layout_constraintBottom_toBottomOf="@id/imagefour"
+            app:layout_constraintStart_toStartOf="@id/imagefour"
+            app:layout_constraintEnd_toEndOf="@id/imagefour"
+            android:layout_margin="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add image"
+            app:layout_constraintBottom_toBottomOf="@id/imagefive"
+            app:layout_constraintStart_toStartOf="@id/imagefive"
+            app:layout_constraintEnd_toEndOf="@id/imagefive"
+            android:layout_margin="15dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:src="@drawable/ic_baseline_navigate_next_24"
+            android:layout_marginTop="25dp"
+            android:text="Continue"
+            android:textSize="18sp"
+            android:id="@+id/next"
+            app:layout_constraintTop_toBottomOf="@id/imagefour"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/button_rounded"
+            android:layout_marginStart="15dp"
+            android:layout_gravity="end|bottom"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

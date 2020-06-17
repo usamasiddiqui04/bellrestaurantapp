@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="match_parent">
+    <!--    logo of the page-->
+    <ImageView
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:id="@+id/logo"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/logo">
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="20dp"
+        android:textSize="30sp"
+        android:id="@+id/welcome"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        android:text="Welcome"
+        android:layout_marginLeft="25dp">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="16sp"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/cont"
+        app:layout_constraintTop_toBottomOf="@id/welcome"
+        android:text="Sign in to continue"
+        android:layout_marginLeft="25dp">
+    </TextView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:id="@+id/layoutone"
+        android:padding="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cont">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            style="@style/MyTextInputLayout"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:drawablePadding="15dp"
+                android:textColorHint="@android:color/darker_gray"
+                android:drawableEnd="@drawable/ic_outline_email_24"
+                android:background="@android:color/white"
+                android:hint="Email"
+                android:maxLines="1"
+                android:inputType="textEmailAddress"
+                android:drawableRight="@drawable/ic_outline_email_24" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:layout_margin="20dp"
+        android:id="@+id/layouttwo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutone">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            style="@style/MyTextInputLayout"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:drawablePadding="15dp"
+                android:maxLines="1"
+                android:inputType="textPassword"
+                android:textColorHint="@android:color/darker_gray"
+                android:drawableEnd="@drawable/ic_outline_lock_24"
+                android:background="@android:color/white"
+                android:hint="Password"
+                android:drawableRight="@drawable/ic_outline_lock_24" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layouttwo"
+        app:layout_constraintEnd_toEndOf="@id/layouttwo"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/forgetpass"
+        android:text="forget password">
+
+    </TextView>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/button_rounded"
+        android:layout_marginTop="10dp"
+        android:text="Login"
+        android:id="@+id/btnlogin"
+        android:textSize="15sp"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        app:layout_constraintTop_toBottomOf="@id/forgetpass"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btnlogin"
+        app:layout_constraintStart_toStartOf="@id/btnlogin"
+        app:layout_constraintEnd_toEndOf="@id/btnlogin"
+        android:text="Don't have an account?"
+        android:id="@+id/dontaccount"
+        android:textSize="16sp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:id="@+id/txt_registerhere"
+        app:layout_constraintTop_toBottomOf="@id/dontaccount"
+        app:layout_constraintStart_toStartOf="@id/dontaccount"
+        app:layout_constraintEnd_toEndOf="@id/dontaccount"
+        android:text="Register here"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="5dp">
+
+    </TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
