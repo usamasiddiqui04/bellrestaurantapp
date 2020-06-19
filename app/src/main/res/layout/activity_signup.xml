@@ -59,6 +59,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:drawablePadding="15dp"
+                    android:id="@+id/ownername"
                     android:textColor="@android:color/darker_gray"
                     android:drawableEnd="@drawable/ic_outline_person_outline_24"
                     android:background="@android:color/white"
@@ -122,6 +123,7 @@
                     android:drawableEnd="@drawable/ic_outline_email_24"
                     android:background="@android:color/white"
                     android:hint="Your Email"
+                    android:id="@+id/email"
                     android:maxLines="1"
                     android:inputType="textEmailAddress"
                     android:drawableRight="@drawable/ic_outline_email_24" />
@@ -153,11 +155,11 @@
                     android:background="@android:color/white"
                     android:hint="Password"
                     android:maxLines="1"
-                    android:inputType="textEmailAddress"
+                    android:id="@+id/password"
+                    android:inputType="textPassword"
                     android:drawableRight="@drawable/ic_outline_lock_24" />
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -183,7 +185,8 @@
                     android:background="@android:color/white"
                     android:hint="Confirm password"
                     android:maxLines="1"
-                    android:inputType="textEmailAddress"
+                    android:id="@+id/confrimpassword"
+                    android:inputType="numberPassword"
                     android:drawableRight="@drawable/ic_outline_lock_24" />
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>

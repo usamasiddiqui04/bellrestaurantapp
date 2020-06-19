@@ -1,4 +1,4 @@
-package com.dropoutsolutions.bellrestaurantapp;
+package com.dropoutsolutions.bellrestaurantapp.Screens;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.dropoutsolutions.bellrestaurantapp.R;
+
 import java.util.Calendar;
 
 public class WorkinghoursActivity extends AppCompatActivity {

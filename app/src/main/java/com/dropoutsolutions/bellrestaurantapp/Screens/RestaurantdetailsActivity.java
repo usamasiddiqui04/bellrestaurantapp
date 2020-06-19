@@ -1,4 +1,4 @@
-package com.dropoutsolutions.bellrestaurantapp;
+package com.dropoutsolutions.bellrestaurantapp.Screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,16 +7,10 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
+import com.dropoutsolutions.bellrestaurantapp.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.hbb20.CountryCodePicker;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Random;
 
 
 public class RestaurantdetailsActivity extends AppCompatActivity {

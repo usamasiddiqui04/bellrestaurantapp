@@ -1,4 +1,7 @@
-package com.dropoutsolutions.bellrestaurantapp;
+package com.dropoutsolutions.bellrestaurantapp.Screens;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -15,9 +18,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.dropoutsolutions.bellrestaurantapp.R;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -55,7 +56,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class RestaurantaddressActivity extends AppCompatActivity implements OnMapReadyCallback {
+
+//    SupportMapFragment supportMapFragment;
+//    FusedLocationProviderClient fusedLocationProviderClient;
+//    TextInputEditText currentlocation;
+//    ProgressDialog progressDialog;
+//    Button savelocation;
+//    ImageView marker;
+//    Marker currentmarker;
+//    private GoogleMap map;
+//    LatLng latLng;
+
 
     private GoogleMap mMap;
     private FusedLocationProviderClient mFusedLocationProviderClient;
@@ -70,25 +82,46 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private Button btnFind;
     private RippleBackground rippleBg;
 
-    private final float DEFAULT_ZOOM = 17;
+    private final float DEFAULT_ZOOM = 15;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
 
         materialSearchBar = findViewById(R.id.searchBar);
         btnFind = findViewById(R.id.btn_find);
         rippleBg = findViewById(R.id.ripple_bg);
-
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        mapView = mapFragment.getView();
 
-        mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(MapActivity.this);
-        Places.initialize(MapActivity.this, getString(R.string.google_map_API_key));
+
+        mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(RestaurantaddressActivity.this);
+        Places.initialize(RestaurantaddressActivity.this, getString(R.string.google_map_API_key));
         placesClient = Places.createClient(this);
         final AutocompleteSessionToken token = AutocompleteSessionToken.newInstance();
+//        setContentView(R.layout.activity_restaurantaddress);
+//        currentlocation = findViewById(R.id.currenlocation);
+//        progressDialog = new ProgressDialog(this);
+//        progressDialog.setTitle("Fetching Your Location");
+//        progressDialog.setMessage("Please wait......");
+//        progressDialog.setCanceledOnTouchOutside(false);
+//        marker = findViewById(R.id.marker);
+//        savelocation = findViewById(R.id.next);
+//
+//        savelocation.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(RestaurantaddressActivity.this, HomeActivity.class));
+//            }
+//        });
+//
+//
+//        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+//
+//        supportMapFragment = (SupportMapFragment) getSupportFragmentManager()
+//                .findFragmentById(R.id.map);
+//
+//        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+//        getCurrentlocation();
 
         materialSearchBar.setOnSearchActionListener(new MaterialSearchBar.OnSearchActionListener() {
             @Override
@@ -206,6 +239,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
             }
         });
+
         btnFind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -215,15 +249,15 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                     @Override
                     public void run() {
                         rippleBg.stopRippleAnimation();
-                        startActivity(new Intent(MapActivity.this, HomeActivity.class));
+                        startActivity(new Intent(RestaurantaddressActivity.this, HomeActivity.class));
                         finish();
                     }
                 }, 3000);
 
             }
         });
-    }
 
+    }
     @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -247,23 +281,23 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder().addLocationRequest(locationRequest);
 
-        SettingsClient settingsClient = LocationServices.getSettingsClient(MapActivity.this);
+        SettingsClient settingsClient = LocationServices.getSettingsClient(RestaurantaddressActivity.this);
         Task<LocationSettingsResponse> task = settingsClient.checkLocationSettings(builder.build());
 
-        task.addOnSuccessListener(MapActivity.this, new OnSuccessListener<LocationSettingsResponse>() {
+        task.addOnSuccessListener(RestaurantaddressActivity.this, new OnSuccessListener<LocationSettingsResponse>() {
             @Override
             public void onSuccess(LocationSettingsResponse locationSettingsResponse) {
                 getDeviceLocation();
             }
         });
 
-        task.addOnFailureListener(MapActivity.this, new OnFailureListener() {
+        task.addOnFailureListener(RestaurantaddressActivity.this, new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 if (e instanceof ResolvableApiException) {
                     ResolvableApiException resolvable = (ResolvableApiException) e;
                     try {
-                        resolvable.startResolutionForResult(MapActivity.this, 51);
+                        resolvable.startResolutionForResult(RestaurantaddressActivity.this, 51);
                     } catch (IntentSender.SendIntentException e1) {
                         e1.printStackTrace();
                     }
@@ -324,9 +358,156 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
                             }
                         } else {
-                            Toast.makeText(MapActivity.this, "unable to get last location", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RestaurantaddressActivity.this, "unable to get last location", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
-}
+
+    }
+
+//    private void getCurrentlocation() {
+//
+//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//
+//            Task<Location> task = fusedLocationProviderClient.getLastLocation();
+//            task.addOnSuccessListener(new OnSuccessListener<Location>() {
+//                @Override
+//                public void onSuccess(final Location location) {
+//                    if (location != null) {
+//                        supportMapFragment.getMapAsync(new OnMapReadyCallback() {
+//                            @Override
+//                            public void onMapReady(final GoogleMap googleMap) {
+//                                map = googleMap;
+//                                latLng = new LatLng(location.getLatitude(), location.getLongitude());
+//
+//
+//                                try {
+//                                    Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+//                                    List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+//                                    if (addresses != null && addresses.size() > 0) {
+//                                        String adress = addresses.get(0).getFeatureName();
+//                                        currentlocation.setText(adress);
+//
+//                                    }
+//                                } catch (Exception e) {
+//                                    e.printStackTrace();
+//
+//                                }
+//
+//                                if (currentmarker == null) {
+//                                    MarkerOptions options = new MarkerOptions().position(latLng).title("I am here");
+//                                    currentmarker = map.addMarker(options);
+//                                    map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17));
+//                                } else {
+//                                    currentmarker.setPosition(latLng);
+//                                }
+//                                map.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
+//                                    @Override
+//                                    public void onCameraIdle() {
+//                                        LatLng center = map.getCameraPosition().target;
+//                                        if (currentmarker != null) {
+//                                            currentmarker.remove();
+//                                            latLng = currentmarker.getPosition();
+//                                            map.addMarker(new MarkerOptions().position(center).title(GetStringAddress(latLng.latitude, latLng.longitude)));
+//                                            currentlocation.setText(GetStringAddress(latLng.latitude, latLng.longitude));
+//                                        }
+//                                    }
+//                                });
+//
+//                            }
+//                        });
+//                    } else {
+//                        Toast.makeText(RestaurantaddressActivity.this, "Location not found", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                }
+//            });
+//        } else {
+//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
+//            getSupportFragmentManager();
+//            Task<Location> task = fusedLocationProviderClient.getLastLocation();
+//            task.addOnSuccessListener(new OnSuccessListener<Location>() {
+//                @Override
+//                public void onSuccess(final Location location) {
+//                    if (location != null) {
+//                        supportMapFragment.getMapAsync(new OnMapReadyCallback() {
+//                            @Override
+//                            public void onMapReady(final GoogleMap googleMap) {
+//                                map = googleMap;
+//                                latLng = new LatLng(location.getLatitude(), location.getLongitude());
+//                                try {
+//                                    Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+//                                    List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+//                                    if (addresses != null && addresses.size() > 0) {
+//                                        String adress = addresses.get(0).getFeatureName();
+//                                        currentlocation.setText(adress);
+//
+//                                    }
+//                                } catch (Exception e) {
+//                                    e.printStackTrace();
+//
+//                                }
+//
+//                                if (currentmarker == null) {
+//                                    MarkerOptions options = new MarkerOptions().position(latLng).title("I am here");
+//                                    currentmarker = map.addMarker(options);
+//                                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17));
+//                                } else {
+//                                    currentmarker.setPosition(latLng);
+//                                }
+//                                map.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
+//                                    @Override
+//                                    public void onCameraIdle() {
+//                                        LatLng center = map.getCameraPosition().target;
+//                                        if (currentmarker != null) {
+//                                            currentmarker.remove();
+//                                            latLng = currentmarker.getPosition();
+//                                            map.addMarker(new MarkerOptions().position(center).title(GetStringAddress(latLng.latitude, latLng.longitude)));
+//                                            currentlocation.setText(GetStringAddress(latLng.latitude, latLng.longitude));
+//
+//                                        }
+//                                    }
+//                                });
+//
+//                            }
+//                        });
+//                    } else {
+//                        Toast.makeText(RestaurantaddressActivity.this, "Location not found", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                }
+//            });
+//        }
+//    }
+//
+//    private BitmapDescriptor bitmapDescriptor(Context context, int vectorredid) {
+//        Drawable drawable = ContextCompat.getDrawable(context, vectorredid);
+//        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+//        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+//        Canvas canvas = new Canvas(bitmap);
+//        drawable.draw(canvas);
+//
+//        return BitmapDescriptorFactory.fromBitmap(bitmap);
+//
+//
+//    }
+//
+//    public String GetStringAddress(Double lat, Double lon) {
+//        String address = "";
+//        String city = "";
+//        Geocoder geocoder;
+//        List<Address> addresses;
+//
+//        geocoder = new Geocoder(this, Locale.getDefault());
+//        try {
+//            addresses = geocoder.getFromLocation(lat, lon, 1);
+//            address = addresses.get(0).getAddressLine(0);
+//            city = addresses.get(0).getLocality();
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        return address + city;
+//    }

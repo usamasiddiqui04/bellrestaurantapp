@@ -1,4 +1,4 @@
-package com.dropoutsolutions.bellrestaurantapp;
+package com.dropoutsolutions.bellrestaurantapp.Screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.dropoutsolutions.bellrestaurantapp.R;
 
 public class RetauranttypeActivity extends AppCompatActivity {
 
