@@ -29,6 +29,8 @@ import com.google.gson.JsonObject;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -59,6 +61,9 @@ public class SignupActivity extends AppCompatActivity {
 
 
     private void registration() {
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        final String formattedDate = df.format(c.getTime());
         final String UserName = username.getText().toString().trim();
         final String Email = email.getText().toString().trim();
         final String Password = password.getText().toString().trim();
@@ -94,9 +99,10 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String , String> params = new HashMap<>();
-                params.put("username" , UserName);
+                params.put("userName" , UserName);
                 params.put("email" , Email);
                 params.put("password" , Password);
+                params.put("createdAt", formattedDate);
 
                  return params ;
             }

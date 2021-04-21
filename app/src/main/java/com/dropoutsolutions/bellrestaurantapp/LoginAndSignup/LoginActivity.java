@@ -75,17 +75,18 @@ public class LoginActivity extends AppCompatActivity {
                 Constants.URL_LOGIN, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                progressDialog.dismiss();
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     if (!jsonObject.getBoolean("error"))
                     {
                         SharedPreferenceManager.getInstance(getApplicationContext()).UserLogin(
-                                jsonObject.getInt("id"),
-                                jsonObject.getString("username"),
-                                jsonObject.getString("email")
+                                jsonObject.getInt("userId"),
+                                jsonObject.getString("email"),
+                                jsonObject.getString("userName")
                         );
                         progressDialog.dismiss();
-                        Toast.makeText(LoginActivity.this, "login Successful" , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, jsonObject.getString("userName") , Toast.LENGTH_SHORT).show();
                     }
                     else
                         progressDialog.dismiss();
@@ -93,6 +94,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 catch (JSONException e)
                 {
+                    progressDialog.dismiss();
                     e.printStackTrace();
                 }
 
@@ -108,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String , String> params = new HashMap<>();
-                params.put("username" , _email);
+                params.put("email" , _email);
                 params.put("password" , _password);
 
                 return params ;
