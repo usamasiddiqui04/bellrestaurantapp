@@ -1,4 +1,4 @@
-package com.dropoutsolutions.bellrestaurantapp.Screens;
+package com.dropoutsolutions.biddingapp.Screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,12 +8,12 @@ import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 
-import com.dropoutsolutions.bellrestaurantapp.R;
+import com.dropoutsolutions.biddingapp.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.hbb20.CountryCodePicker;
 
 
-public class RestaurantdetailsActivity extends AppCompatActivity {
+public class UserDetailActivity extends AppCompatActivity {
 
     private CountryCodePicker countryCodePicker ;
     private Button cont ;
@@ -61,7 +61,7 @@ public class RestaurantdetailsActivity extends AppCompatActivity {
 //
 //                }
 
-                startActivity(new Intent(RestaurantdetailsActivity.this, RetauranttypeActivity.class));
+                startActivity(new Intent(UserDetailActivity.this, RetauranttypeActivity.class));
             }
         });
 

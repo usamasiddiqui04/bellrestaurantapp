@@ -1,4 +1,4 @@
-package com.dropoutsolutions.bellrestaurantapp.Screens;
+package com.dropoutsolutions.biddingapp.Screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.dropoutsolutions.bellrestaurantapp.R;
+import com.dropoutsolutions.biddingapp.R;
 
 public class RetauranttypeActivity extends AppCompatActivity {
 
@@ -18,13 +18,6 @@ public class RetauranttypeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_retauranttype);
 
         next = findViewById(R.id.next);
-
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RetauranttypeActivity.this , WorkinghoursActivity.class));
-            }
-        });
 
     }
 }

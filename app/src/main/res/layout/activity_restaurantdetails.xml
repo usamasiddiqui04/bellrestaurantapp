@@ -62,12 +62,12 @@
                     android:layout_height="60dp"
                     android:drawablePadding="15dp"
                     android:textColor="@android:color/darker_gray"
-                    android:drawableEnd="@drawable/ic_baseline_fastfood_24"
+                    android:drawableEnd="@drawable/ic_outline_person_outline_24"
                     android:background="@android:color/white"
-                    android:hint="Restaurant name"
+                    android:hint="First Name"
                     android:maxLines="1"
-                    android:inputType="textEmailAddress"
-                    android:drawableRight="@drawable/ic_baseline_fastfood_24" />
+                    android:inputType="text"
+                    android:drawableRight="@drawable/ic_outline_person_outline_24" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>
@@ -84,17 +84,20 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 style="@style/MyTextInputLayout"
-                app:helperText="min. 1000 letters (Mandatory)"
+                app:helperText="Mandatory"
                 android:textColor="@android:color/darker_gray"
                 android:textColorHint="@android:color/darker_gray"
                 android:layout_height="wrap_content">
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="top|start"
+                    android:drawableEnd="@drawable/ic_outline_person_outline_24"
                     android:textColorHint="@android:color/darker_gray"
                     android:background="@android:color/white"
-                    android:hint="Restaurant Description" />
+                    android:drawableRight="@drawable/ic_outline_person_outline_24"
+                    android:maxLines="1"
+                    android:inputType=""
+                    android:hint="Last Name" />
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
 

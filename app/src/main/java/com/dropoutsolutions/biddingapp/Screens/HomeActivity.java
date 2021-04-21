@@ -1,10 +1,10 @@
-package com.dropoutsolutions.bellrestaurantapp.Screens;
+package com.dropoutsolutions.biddingapp.Screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.dropoutsolutions.bellrestaurantapp.R;
+import com.dropoutsolutions.biddingapp.R;
 
 public class HomeActivity extends AppCompatActivity {
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.dropoutsolutions.bellrestaurantapp">
+    package="com.dropoutsolutions.biddingapp">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -19,21 +19,21 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup"
         android:theme="@style/AppTheme">
-        <activity android:name=".Screens.MapActivity"/>
-        <activity android:name=".Screens.HomeActivity" />
+        <activity android:name="com.dropoutsolutions.biddingapp.Screens.HomeActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCguz2TEsNWYYmtfKGHSvEhBX6lHL3exUg" />
 
 
-        <activity android:name=".Screens.RestaurantaddressActivity" />
-        <activity android:name=".Screens.WorkinghoursActivity" />
-        <activity android:name=".Screens.RetauranttypeActivity" />
-        <activity android:name=".Screens.RestaurantdetailsActivity" />
-        <activity android:name=".LoginAndSignup.SignupActivity" />
-        <activity android:name=".LoginAndSignup.LoginActivity" />
-        <activity android:name=".Screens.MainActivity">
+        <activity android:name="com.dropoutsolutions.biddingapp.Screens.RestaurantaddressActivity" />
+        <activity android:name="com.dropoutsolutions.biddingapp.Screens.RetauranttypeActivity" />
+        <activity android:name="com.dropoutsolutions.biddingapp.Screens.UserDetailActivity">
+
+        </activity>
+        <activity android:name="com.dropoutsolutions.biddingapp.LoginAndSignup.SignupActivity" />
+        <activity android:name="com.dropoutsolutions.biddingapp.LoginAndSignup.LoginActivity" />
+        <activity android:name="com.dropoutsolutions.biddingapp.Screens.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

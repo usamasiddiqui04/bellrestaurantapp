@@ -1,30 +1,22 @@
-package com.dropoutsolutions.bellrestaurantapp.LoginAndSignup;
+package com.dropoutsolutions.biddingapp.LoginAndSignup;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.dropoutsolutions.bellrestaurantapp.Models.Constants;
-import com.dropoutsolutions.bellrestaurantapp.Models.RequestHandler;
-import com.dropoutsolutions.bellrestaurantapp.R;
+import com.dropoutsolutions.biddingapp.Models.Constants;
+import com.dropoutsolutions.biddingapp.Models.RequestHandler;
+import com.dropoutsolutions.biddingapp.R;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.gson.JsonIOException;
-import com.google.gson.JsonObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;

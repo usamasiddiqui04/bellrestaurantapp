@@ -1,11 +1,9 @@
-package com.dropoutsolutions.bellrestaurantapp.Models;
+package com.dropoutsolutions.biddingapp.Models;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
 
 public class SharedPreferenceManager {
     private static SharedPreferenceManager instance;

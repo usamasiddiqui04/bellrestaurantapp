@@ -1,4 +1,4 @@
-package com.dropoutsolutions.bellrestaurantapp;
+package com.dropoutsolutions.biddingapp;
 
 import android.content.Context;
 

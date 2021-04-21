@@ -1,4 +1,4 @@
-package com.dropoutsolutions.bellrestaurantapp.Models;
+package com.dropoutsolutions.biddingapp.Models;
 
 public class Constants {
 
