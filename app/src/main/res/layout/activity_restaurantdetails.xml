@@ -229,6 +229,7 @@
                 style="@style/MyTextInputLayout"
                 android:id="@+id/postalcode"
                 android:layout_marginTop="10dp"
+                app:helperText="without dash (Mandatory)"
                 app:layout_constraintTop_toBottomOf="@id/city"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textColorHint="@android:color/darker_gray"
@@ -240,8 +241,9 @@
                     android:textColor="@android:color/darker_gray"
                     android:textColorHint="@android:color/darker_gray"
                     android:background="@android:color/white"
-                    android:hint="Postal/Zip code"
+                    android:hint="CNIC"
                     android:maxLines="1"
+                    android:maxLength="13"
                     android:inputType="textEmailAddress"/>
             </com.google.android.material.textfield.TextInputLayout>
 
