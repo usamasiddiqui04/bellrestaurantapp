@@ -1,4 +1,4 @@
-package com.dropoutsolutions.biddingapp.Screens;
+package com.fyp.biddingapp.Screens;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +18,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.dropoutsolutions.biddingapp.R;
+import com.fyp.biddingapp.R;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;

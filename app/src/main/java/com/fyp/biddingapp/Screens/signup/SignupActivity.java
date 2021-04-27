@@ -1,4 +1,4 @@
-package com.dropoutsolutions.biddingapp.LoginAndSignup;
+package com.fyp.biddingapp.Screens.signup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,9 +13,9 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.dropoutsolutions.biddingapp.Models.Constants;
-import com.dropoutsolutions.biddingapp.Models.RequestHandler;
-import com.dropoutsolutions.biddingapp.R;
+import com.fyp.biddingapp.Models.Constants;
+import com.fyp.biddingapp.Models.RequestHandler;
+import com.fyp.biddingapp.R;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONException;

@@ -1,4 +1,4 @@
-package com.dropoutsolutions.biddingapp.Models;
+package com.fyp.biddingapp.Models;
 
 import android.content.Context;
 import android.content.SharedPreferences;

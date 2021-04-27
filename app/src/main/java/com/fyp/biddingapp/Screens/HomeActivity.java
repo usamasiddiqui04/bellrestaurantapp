@@ -1,10 +1,11 @@
-package com.dropoutsolutions.biddingapp.Screens;
+package com.fyp.biddingapp.Screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.dropoutsolutions.biddingapp.R;
+import com.fyp.biddingapp.R;
+
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -12,7 +13,5 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-
     }
 }

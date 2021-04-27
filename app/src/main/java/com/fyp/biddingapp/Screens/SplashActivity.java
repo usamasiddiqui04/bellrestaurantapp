@@ -1,4 +1,4 @@
-package com.dropoutsolutions.biddingapp.Screens;
+package com.fyp.biddingapp.Screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.dropoutsolutions.biddingapp.LoginAndSignup.LoginActivity;
-import com.dropoutsolutions.biddingapp.R;
+import com.fyp.biddingapp.R;
+import com.fyp.biddingapp.Screens.main.MainActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -19,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent gotomain = new Intent(SplashActivity.this , LoginActivity.class);
+                Intent gotomain = new Intent(SplashActivity.this , MainActivity.class);
                 startActivity(gotomain);
                 finish();
             }

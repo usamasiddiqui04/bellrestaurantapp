@@ -282,7 +282,7 @@
                     android:textColor="@android:color/darker_gray"
                     android:textColorHint="@android:color/darker_gray"
                     android:background="@android:color/white"
-                    android:hint="Description"
+                    android:hint="Why you use this app?"
                     android:inputType="textMultiLine"
                     android:maxLength="500"/>
             </com.google.android.material.textfield.TextInputLayout>
