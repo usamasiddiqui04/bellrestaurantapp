@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.fyp.biddingapp.R;
+import com.fyp.biddingapp.Screens.login.LoginActivity;
 import com.fyp.biddingapp.Screens.main.MainActivity;
 
 public class SplashActivity extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent gotomain = new Intent(SplashActivity.this , MainActivity.class);
+                Intent gotomain = new Intent(SplashActivity.this , LoginActivity.class);
                 startActivity(gotomain);
                 finish();
             }

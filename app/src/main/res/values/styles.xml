@@ -8,7 +8,6 @@
     </style>
     <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:textColorHint">@color/colorPrimary</item>
-
         <item name="boxStrokeColor">@color/colorPrimary</item>
         <item name="strokeWidth">1dp</item>
     </style>

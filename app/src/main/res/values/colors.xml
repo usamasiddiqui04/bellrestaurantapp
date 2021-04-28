@@ -6,4 +6,6 @@
     <color name="background">#EEEDEF</color>
     <color name="black">#000000</color>
     <color name="grey">#F1F4F6</color>
+    <color name="colorlogo">#DAF2F9</color>
+
 </resources>
