@@ -19,22 +19,21 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name="com.fyp.biddingapp.Screens.main.MainActivity" />
-        <activity android:name=".Screens.HomeActivity" />
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCguz2TEsNWYYmtfKGHSvEhBX6lHL3exUg" />
-        <activity android:name=".Screens.RestaurantaddressActivity" />
-        <activity android:name=".Screens.RetauranttypeActivity" />
-        <activity android:name=".Screens.UserDetailActivity" />
-        <activity android:name=".Screens.signup.SignupActivity" />
-        <activity android:name=".Screens.login.LoginActivity" />
-        <activity android:name=".Screens.SplashActivity">
+        <activity android:name="com.fyp.biddingapp.Screens.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Screens.HomeActivity">
+        </activity>
+        <activity android:name=".Screens.RetauranttypeActivity" />
+        <activity android:name=".Screens.userdetails.UserDetailActivity" />
+        <activity android:name=".Screens.signup.SignupActivity" />
+        <activity android:name=".Screens.login.LoginActivity" />
+        <activity android:name=".Screens.SplashActivity">
+
         </activity>
     </application>
 

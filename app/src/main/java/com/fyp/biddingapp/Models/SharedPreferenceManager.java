@@ -1,19 +1,22 @@
 package com.fyp.biddingapp.Models;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.android.volley.RequestQueue;
 
 public class SharedPreferenceManager {
-    private static SharedPreferenceManager instance;
     private RequestQueue requestQueue;
+    @SuppressLint("StaticFieldLeak")
     private static Context ctx;
+    @SuppressLint("StaticFieldLeak")
+    private static SharedPreferenceManager instance;
 
     private static final String SHARED_PREF_NAME = "mysharedpref12";
-    private static final String KEY_ID = "userid";
-    private static final String KEY_NAME = "username";
-    private static final String KEY_EMAIL = "useremail ";
+    private static final String KEY_ID = "userId";
+    private static final String KEY_NAME = "userName";
+    private static final String KEY_EMAIL = "email ";
 
     private SharedPreferenceManager(Context context) {
         ctx = context;
@@ -28,12 +31,12 @@ public class SharedPreferenceManager {
         return instance;
     }
 
-    public boolean UserLogin (int id , String UserName , String Email)
+    public boolean UserLogin (int userId , String UserName , String Email)
     {
         SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME , Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        editor.putInt(KEY_ID , id);
+        editor.putInt(KEY_ID , userId);
         editor.putString(KEY_NAME , UserName);
         editor.putString(KEY_EMAIL , Email);
         editor.apply();
@@ -60,6 +63,12 @@ public class SharedPreferenceManager {
 
         return true;
 
+    }
+
+    public int getUserID ()
+    {
+        SharedPreferences sharedPreferences = ctx.getSharedPreferences(SHARED_PREF_NAME , Context.MODE_PRIVATE);
+        return sharedPreferences.getInt(KEY_ID , 0);
     }
 
 

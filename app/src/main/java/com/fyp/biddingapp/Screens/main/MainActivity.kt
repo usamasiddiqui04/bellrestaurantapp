@@ -1,64 +1,64 @@
 package com.fyp.biddingapp.Screens.main
 
-import android.annotation.SuppressLint
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import androidx.annotation.NonNull
+import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.fyp.biddingapp.R
 import com.fyp.biddingapp.fragments.BidFragment
 import com.fyp.biddingapp.fragments.HomeFragment
 import com.fyp.biddingapp.fragments.SettingFragment
 import com.fyp.biddingapp.fragments.WishlistFragment
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
+import nl.joery.animatedbottombar.AnimatedBottomBar
+import org.jetbrains.annotations.NotNull
 
 
 class MainActivity : AppCompatActivity() {
 
-    var drawable : Drawable? = null
 
-
-
-    private var icons = intArrayOf(R.drawable.home, R.drawable.hammer, R.drawable.wishlist, R.drawable.settings)
-    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         setSupportActionBar(toolbar)
+        if (savedInstanceState == null) {
 
-        view_pager.adapter = ViewPagerFragmentAdapter(this)
+            animatedBottomBar.selectTabById(R.id.home, true)
+            val fragmentManager = supportFragmentManager
+            val homeFragment = HomeFragment()
+            fragmentManager.beginTransaction().replace(R.id.frame_container, homeFragment)
+                    .commit()
+        }
 
-
-        TabLayoutMediator(
-                tab_layout, view_pager
-        ) { tab: TabLayout.Tab, position: Int ->
-            drawable = resources.getDrawable(icons[position])
-            tab.icon = drawable
-        }.attach()
-    }
-
-    private class ViewPagerFragmentAdapter(@NonNull fragmentActivity: FragmentActivity?) :
-            FragmentStateAdapter(fragmentActivity!!) {
-        @NonNull
-        override fun createFragment(position: Int): Fragment {
-            when (position) {
-                0 -> return HomeFragment()
-                1 -> return BidFragment()
-                2 -> return WishlistFragment()
-                3 -> return SettingFragment()
+        animatedBottomBar.setOnTabSelectListener(object : AnimatedBottomBar.OnTabSelectListener {
+            override fun onTabSelected(lastIndex: Int, @Nullable lastTab: AnimatedBottomBar.Tab?, newIndex: Int, @NotNull newTab: AnimatedBottomBar.Tab) {
+                var fragment: Fragment? = null
+                when (newTab.id) {
+                    R.id.home -> {
+                        fragment = HomeFragment()
+                        toolbar.title = "Home"
+                    }
+                    R.id.bids -> {
+                        fragment = BidFragment()
+                        toolbar.title = "Bids"
+                    }
+                    R.id.favourite ->{
+                        fragment = WishlistFragment()
+                        toolbar.title = "Favourites"
+                    }
+                    R.id.settings -> {
+                        fragment = SettingFragment()
+                        toolbar.title = "Settings"
+                    }
+                }
+                if (fragment != null) {
+                    val fragmentManager = supportFragmentManager
+                    fragmentManager.beginTransaction().replace(R.id.frame_container, fragment)
+                            .commit()
+                }
             }
-            return HomeFragment()
-        }
+        })
 
-        override fun getItemCount(): Int {
-            return 4
-        }
     }
 
 }

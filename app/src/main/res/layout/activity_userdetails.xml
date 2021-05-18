@@ -2,313 +2,352 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="#ffffff"
-    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
         android:background="#ffffff"
-        >
+        android:paddingBottom="10dp">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="15dp"
-            android:textSize="30sp"
             android:id="@+id/welcome"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
             android:text="Welcome"
-            android:layout_marginLeft="15dp">
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
         </TextView>
 
         <TextView
+            android:id="@+id/cont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            android:textSize="16sp"
             android:layout_marginStart="15dp"
-            android:textColor="@color/colorPrimary"
-            android:id="@+id/cont"
-            app:layout_constraintTop_toBottomOf="@id/welcome"
+            android:layout_marginLeft="15dp"
             android:text="Online Registration Form"
-            android:layout_marginLeft="15dp">
-        </TextView>
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcome" />
 
         <RelativeLayout
+            android:id="@+id/layoutone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
-            android:id="@+id/layoutone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cont">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
                 style="@style/MyTextInputLayout"
-                app:helperText="Mandatory"
-                app:boxStrokeColor="@color/colorAccent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:textColorHint="@android:color/darker_gray"
-                android:layout_height="wrap_content">
+                app:boxStrokeColor="@color/colorAccent"
+                app:helperText="Mandatory">
+
                 <com.google.android.material.textfield.TextInputEditText
+                    style="@style/MyTextInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:drawablePadding="15dp"
-                    android:textColor="@android:color/darker_gray"
-                    android:drawableEnd="@drawable/ic_outline_person_outline_24"
                     android:background="@android:color/white"
+                    android:drawableEnd="@drawable/ic_outline_person_outline_24"
+                    android:drawableRight="@drawable/ic_outline_person_outline_24"
+                    android:drawablePadding="15dp"
                     android:hint="First Name"
-                    android:maxLines="1"
+                    android:id="@+id/userFirstName"
                     android:inputType="text"
-                    android:drawableRight="@drawable/ic_outline_person_outline_24" />
+                    android:maxLines="1"
+                    android:textColor="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>
+
         <RelativeLayout
+            android:id="@+id/layouttwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
-            android:id="@+id/layouttwo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutone">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
                 style="@style/MyTextInputLayout"
-                app:helperText="Mandatory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:textColor="@android:color/darker_gray"
                 android:textColorHint="@android:color/darker_gray"
-                android:layout_height="wrap_content">
+                app:helperText="Mandatory">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/ic_outline_person_outline_24"
-                    android:textColorHint="@android:color/darker_gray"
                     android:background="@android:color/white"
+                    android:drawableEnd="@drawable/ic_outline_person_outline_24"
                     android:drawableRight="@drawable/ic_outline_person_outline_24"
+                    android:hint="Last Name"
+                    android:id="@+id/userLastName"
+                    android:inputType="text"
                     android:maxLines="1"
-                    android:inputType=""
-                    android:hint="Last Name" />
+                    android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
 
 
         <RelativeLayout
+            android:id="@+id/layoutfour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
-            android:id="@+id/layoutthree"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layouttwo">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
                 style="@style/MyTextInputLayout"
-                app:helperText="Mandatory"
-                android:textColor="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:textColorHint="@android:color/darker_gray"
-                android:layout_height="wrap_content">
+                app:helperText="With country code 923xxxxxxxxx (Mandatory)">
+
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userPhoneNumber"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:drawablePadding="15dp"
-                    android:textColorHint="@android:color/darker_gray"
-                    android:drawableEnd="@drawable/ic_outline_email_24"
                     android:background="@android:color/white"
-                    android:hint="Email address"
-                    android:maxLines="1"
-                    android:inputType="textEmailAddress"
-                    android:drawableRight="@drawable/ic_outline_email_24" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:id="@+id/layoutfour"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layoutthree">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                style="@style/MyTextInputLayout"
-                app:helperText="With country code 923xxxxxxxxx (Mandatory)"
-                android:textColorHint="@android:color/darker_gray"
-                android:layout_height="wrap_content">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:drawablePadding="15dp"
-                    android:maxLength="14"
-                    android:id="@+id/number"
-                    android:textColor="@android:color/darker_gray"
-                    android:textColorHint="@android:color/darker_gray"
                     android:drawableEnd="@drawable/ic_outline_phone_iphone_24"
-                    android:background="@android:color/white"
+                    android:drawableRight="@drawable/ic_outline_phone_iphone_24"
+                    android:drawablePadding="15dp"
                     android:hint="Phone number"
-                    android:maxLines="1"
                     android:inputType="phone"
-                    android:drawableRight="@drawable/ic_outline_phone_iphone_24" />
+                    android:maxLength="11"
+                    android:maxLines="1"
+                    android:textColor="@android:color/darker_gray"
+                    android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:id="@+id/constraint"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutfour">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="0dp"
-                app:layout_constraintWidth_percent="0.48"
-                style="@style/MyTextInputLayout"
                 android:id="@+id/city"
-                app:helperText="Mandatory"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                style="@style/MyTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:textColorHint="@android:color/darker_gray"
-                android:layout_height="wrap_content">
+                app:helperText="Mandatory"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.48">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:drawablePadding="15dp"
-                    android:textColor="@android:color/darker_gray"
-                    android:textColorHint="@android:color/darker_gray"
+                    android:id="@+id/userCity"
                     android:background="@android:color/white"
+                    android:drawablePadding="15dp"
                     android:hint="City"
+                    android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:inputType="textEmailAddress"/>
+                    android:textColor="@android:color/darker_gray"
+                    android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="0dp"
-                app:layout_constraintWidth_percent="0.48"
-                style="@style/MyTextInputLayout"
                 android:id="@+id/province"
-                app:helperText="Mandatory"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                style="@style/MyTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:textColorHint="@android:color/darker_gray"
-                android:layout_height="wrap_content">
+                app:helperText="Mandatory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.48">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:drawablePadding="15dp"
-                    android:textColor="@android:color/darker_gray"
-                    android:textColorHint="@android:color/darker_gray"
+                    android:id="@+id/userProvince"
                     android:background="@android:color/white"
+                    android:drawablePadding="15dp"
                     android:hint="Province"
+                    android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:inputType="textEmailAddress"/>
+                    android:textColor="@android:color/darker_gray"
+                    android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="0dp"
-                app:layout_constraintWidth_percent="0.48"
-                style="@style/MyTextInputLayout"
                 android:id="@+id/postalcode"
+                style="@style/MyTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                app:helperText="without dash (Mandatory)"
-                app:layout_constraintTop_toBottomOf="@id/city"
-                app:layout_constraintStart_toStartOf="parent"
                 android:textColorHint="@android:color/darker_gray"
-                android:layout_height="wrap_content">
+                app:helperText="without dash (Mandatory)"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/city"
+                app:layout_constraintWidth_percent="0.48">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:drawablePadding="15dp"
-                    android:textColor="@android:color/darker_gray"
-                    android:textColorHint="@android:color/darker_gray"
                     android:background="@android:color/white"
+                    android:drawablePadding="15dp"
                     android:hint="CNIC"
-                    android:maxLines="1"
+                    android:id="@+id/userCnic"
+                    android:inputType="textEmailAddress"
                     android:maxLength="13"
-                    android:inputType="textEmailAddress"/>
+                    android:maxLines="1"
+                    android:textColor="@android:color/darker_gray"
+                    android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.hbb20.CountryCodePicker
+                android:id="@+id/userCountry"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/backgroundtext"
                 android:gravity="center"
                 app:ccp_arrowColor="@color/colorPrimary"
-                app:ccp_showFullName="true"
-                app:ccp_showPhoneCode="false"
-                app:ccp_showNameCode="false"
-                android:id="@+id/countrycodepicker"
                 app:ccp_autoDetectCountry="true"
-                android:background="@drawable/backgroundtext"
-                android:layout_marginTop="14dp"
-                app:layout_constraintWidth_percent="0.48"
+                app:ccp_showFullName="true"
+                app:ccp_showNameCode="false"
+                app:ccp_showPhoneCode="false"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/province"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintWidth_percent="0.48" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutfive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userCountry">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@android:color/darker_gray"
+                    app:helperText="Mandatory"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.48">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@android:color/white"
+                        android:drawablePadding="15dp"
+                        android:hint="Date of birth"
+                        android:inputType="date"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:id="@+id/userDateOfBirth"
+                        android:maxLines="1"
+                        android:textColor="@android:color/darker_gray"
+                        android:textColorHint="@android:color/darker_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@android:color/darker_gray"
+                    app:helperText="Mandatory"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.48">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@android:color/white"
+                        android:drawablePadding="15dp"
+                        android:hint="Gender"
+                        android:id="@+id/userGender"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textColor="@android:color/darker_gray"
+                        android:textColorHint="@android:color/darker_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
                 style="@style/MyTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                app:helperText="Max 500 words (Mandatory)"
-                app:layout_constraintTop_toBottomOf="@id/postalcode"
-                app:layout_constraintStart_toStartOf="parent"
                 android:textColorHint="@android:color/darker_gray"
-                android:layout_height="wrap_content">
+                app:helperText="Max 500 words (Mandatory)"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutfive">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+                    android:background="@android:color/white"
                     android:drawablePadding="15dp"
                     android:gravity="top"
-                    android:textColor="@android:color/darker_gray"
-                    android:textColorHint="@android:color/darker_gray"
-                    android:background="@android:color/white"
                     android:hint="Why you use this app?"
+                    android:id="@+id/userDescription"
                     android:inputType="textMultiLine"
-                    android:maxLength="500"/>
+                    android:maxLength="500"
+                    android:textColor="@android:color/darker_gray"
+                    android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
+            android:id="@+id/userSaveDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:src="@drawable/ic_baseline_navigate_next_24"
+            android:layout_gravity="end|bottom"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="25dp"
-            android:text="Continue"
-            android:textSize="18sp"
-            android:id="@+id/next"
-            android:textColor="@android:color/white"
-            android:textAllCaps="false"
             android:layout_marginEnd="15dp"
             android:background="@drawable/button_rounded"
-            android:layout_marginStart="15dp"
-            android:layout_gravity="end|bottom"
+            android:padding="15dp"
+            android:src="@drawable/ic_baseline_navigate_next_24"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/constraint" />
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
