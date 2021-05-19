@@ -47,7 +47,7 @@ class BidDetailsActivity : AppCompatActivity() {
 
 
 
-        cardviewImage.setOnClickListener {
+        cardviewImage.setOnClickListener  {
             Dexter.withActivity(this)
                     .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                     .withListener(object : PermissionListener {
