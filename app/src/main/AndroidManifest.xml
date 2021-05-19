@@ -23,7 +23,6 @@
         <activity android:name=".Screens.main.MainActivity">
 
         </activity>
-        <activity android:name=".Screens.HomeActivity" />
         <activity android:name=".Screens.userdetails.UserDetailActivity" />
         <activity android:name=".Screens.signup.SignupActivity" />
         <activity android:name=".Screens.login.LoginActivity" />

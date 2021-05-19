@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.fyp.biddingapp.Models.SharedPreferenceManager
 import com.fyp.biddingapp.R
 import com.fyp.biddingapp.Screens.SplashActivity
+import com.fyp.biddingapp.Screens.login.LoginActivity
 import com.fyp.biddingapp.fragments.BidFragment
 import com.fyp.biddingapp.fragments.HomeFragment
 import com.fyp.biddingapp.fragments.SettingFragment
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         if (!SharedPreferenceManager.getInstance(this).loggedin()) {
-            startActivity(Intent(this, SplashActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
             return
         }
