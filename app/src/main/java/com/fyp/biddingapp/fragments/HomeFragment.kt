@@ -1,31 +1,29 @@
-package com.fyp.biddingapp.fragments;
+package com.fyp.biddingapp.fragments
 
-import android.os.Bundle;
+import android.content.Intent
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.os.Bundle
+import android.view.View
+import androidx.fragment.app.Fragment
+import com.fyp.biddingapp.R
+import com.fyp.biddingapp.Screens.bidsdetails.BidDetailsActivity
+import com.fyp.biddingapp.Screens.userdetails.UserDetailActivity
+import kotlinx.android.synthetic.main.fragment_home.*
 
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.fyp.biddingapp.R;
-
-public class HomeFragment extends Fragment {
-
-
-    public HomeFragment() {
-        // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+class HomeFragment : Fragment() {
+    override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        btnAdd.setOnClickListener {
+            startActivity(Intent(requireContext(),BidDetailsActivity::class.java))
+        }
     }
 }

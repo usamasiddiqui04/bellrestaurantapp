@@ -17,8 +17,8 @@ import com.fyp.biddingapp.Models.Constants
 import com.fyp.biddingapp.Models.RequestHandler
 import com.fyp.biddingapp.Models.SharedPreferenceManager
 import com.fyp.biddingapp.R
-import com.fyp.biddingapp.Screens.userdetails.UserDetailActivity
 import com.fyp.biddingapp.Screens.signup.SignupActivity
+import com.fyp.biddingapp.Screens.userdetails.UserDetailActivity
 import com.google.android.material.textfield.TextInputEditText
 import org.json.JSONException
 import org.json.JSONObject
@@ -39,7 +39,9 @@ class LoginActivity : AppCompatActivity() {
         buttonlogin = findViewById(R.id.btnlogin)
         email = findViewById(R.id.loginemail)
         password = findViewById(R.id.loginpassword)
-        buttonlogin!!.setOnClickListener(View.OnClickListener { loginuser() })
+        buttonlogin!!.setOnClickListener {
+            loginuser()
+        }
         Register!!.setOnClickListener { startActivity(Intent(this@LoginActivity, SignupActivity::class.java)) }
     }
 
@@ -50,7 +52,6 @@ class LoginActivity : AppCompatActivity() {
         progressDialog.show(this, "logging please wait...")
         val stringRequest: StringRequest = object : StringRequest(Method.POST,
                 Constants.URL_LOGIN, Response.Listener { response ->
-            progressDialog.dialog.dismiss()
             try {
                 val jsonObject = JSONObject(response)
                 if (!jsonObject.getBoolean("error")) {
@@ -61,6 +62,7 @@ class LoginActivity : AppCompatActivity() {
                     )
                     progressDialog.dialog.dismiss()
                     startActivity(Intent(this@LoginActivity, UserDetailActivity::class.java))
+                    finish()
                 } else progressDialog.dialog.dismiss()
                 Toast.makeText(this@LoginActivity, jsonObject.getString("message"), Toast.LENGTH_SHORT).show()
             } catch (e: JSONException) {

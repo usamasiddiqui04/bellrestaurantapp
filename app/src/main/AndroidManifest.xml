@@ -19,21 +19,20 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name="com.fyp.biddingapp.Screens.main.MainActivity">
+        <activity android:name=".Screens.bidsdetails.BidDetailsActivity" />
+        <activity android:name=".Screens.main.MainActivity">
+
+        </activity>
+        <activity android:name=".Screens.HomeActivity" />
+        <activity android:name=".Screens.userdetails.UserDetailActivity" />
+        <activity android:name=".Screens.signup.SignupActivity" />
+        <activity android:name=".Screens.login.LoginActivity" />
+        <activity android:name=".Screens.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".Screens.HomeActivity">
-        </activity>
-        <activity android:name=".Screens.RetauranttypeActivity" />
-        <activity android:name=".Screens.userdetails.UserDetailActivity" />
-        <activity android:name=".Screens.signup.SignupActivity" />
-        <activity android:name=".Screens.login.LoginActivity" />
-        <activity android:name=".Screens.SplashActivity">
-
         </activity>
     </application>
 

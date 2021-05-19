@@ -1,10 +1,13 @@
 package com.fyp.biddingapp.Screens.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.fyp.biddingapp.Models.SharedPreferenceManager
 import com.fyp.biddingapp.R
+import com.fyp.biddingapp.Screens.SplashActivity
 import com.fyp.biddingapp.fragments.BidFragment
 import com.fyp.biddingapp.fragments.HomeFragment
 import com.fyp.biddingapp.fragments.SettingFragment
@@ -21,6 +24,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        if (!SharedPreferenceManager.getInstance(this).loggedin()) {
+            startActivity(Intent(this, SplashActivity::class.java))
+            finish()
+            return
+        }
         if (savedInstanceState == null) {
 
             animatedBottomBar.selectTabById(R.id.home, true)
@@ -29,6 +38,8 @@ class MainActivity : AppCompatActivity() {
             fragmentManager.beginTransaction().replace(R.id.frame_container, homeFragment)
                     .commit()
         }
+
+
 
         animatedBottomBar.setOnTabSelectListener(object : AnimatedBottomBar.OnTabSelectListener {
             override fun onTabSelected(lastIndex: Int, @Nullable lastTab: AnimatedBottomBar.Tab?, newIndex: Int, @NotNull newTab: AnimatedBottomBar.Tab) {

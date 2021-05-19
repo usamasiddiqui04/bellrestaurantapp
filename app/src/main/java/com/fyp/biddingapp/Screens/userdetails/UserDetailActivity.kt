@@ -5,6 +5,8 @@ import android.app.DatePickerDialog.OnDateSetListener
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -47,6 +49,27 @@ class UserDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_userdetails)
 
+        userCnic.addTextChangedListener(object : TextWatcher {
+            var len = 0
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                val str = userCnic.text.toString()
+                if (str.length == 5 && len < str.length || str.length == 13 && len < str.length) {
+                    userCnic.append("-")
+                }
+            }
+
+            override fun beforeTextChanged(
+                    s: CharSequence, start: Int, count: Int,
+                    after: Int,
+            ) {
+                val str = userCnic.text.toString()
+                len = str.length
+            }
+
+            override fun afterTextChanged(s: Editable) {
+            }
+        })
+
 
         val date = OnDateSetListener { view, year, monthOfYear, dayOfMonth -> // TODO Auto-generated method stub
             myCalendar.set(Calendar.YEAR, year)
@@ -76,11 +99,12 @@ class UserDetailActivity : AppCompatActivity() {
 
         val stringRequest: StringRequest = object : StringRequest(Method.POST,
                 Constants.URL_DETAILS, Response.Listener { response ->
-            progressDialog.dialog.dismiss()
             try {
                 val jsonObject = JSONObject(response)
                 if (!jsonObject.getBoolean("error")) {
+                    progressDialog.dialog.dismiss()
                     startActivity(Intent(this, MainActivity::class.java))
+                    finish()
                 }
                 Toast.makeText(applicationContext, jsonObject.getString("message"), Toast.LENGTH_SHORT).show()
             } catch (e: JSONException) {

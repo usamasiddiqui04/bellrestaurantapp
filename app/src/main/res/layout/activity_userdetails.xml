@@ -69,7 +69,8 @@
                     android:id="@+id/userFirstName"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:textColor="@android:color/darker_gray" />
+                    android:textColorHint="@android:color/darker_gray"
+                    android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>
@@ -102,6 +103,7 @@
                     android:id="@+id/userLastName"
                     android:inputType="text"
                     android:maxLines="1"
+                    android:textColor="@color/black"
                     android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
@@ -136,7 +138,7 @@
                     android:inputType="phone"
                     android:maxLength="11"
                     android:maxLines="1"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@color/black"
                     android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
@@ -172,7 +174,7 @@
                     android:hint="City"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@color/black"
                     android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -196,7 +198,7 @@
                     android:hint="Province"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@color/black"
                     android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -221,9 +223,9 @@
                     android:hint="CNIC"
                     android:id="@+id/userCnic"
                     android:inputType="textEmailAddress"
-                    android:maxLength="13"
+                    android:maxLength="15"
                     android:maxLines="1"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@color/black"
                     android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -276,7 +278,7 @@
                         android:focusableInTouchMode="false"
                         android:id="@+id/userDateOfBirth"
                         android:maxLines="1"
-                        android:textColor="@android:color/darker_gray"
+                        android:textColor="@color/black"
                         android:textColorHint="@android:color/darker_gray" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -299,7 +301,7 @@
                         android:id="@+id/userGender"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
-                        android:textColor="@android:color/darker_gray"
+                        android:textColor="@color/black"
                         android:textColorHint="@android:color/darker_gray" />
                 </com.google.android.material.textfield.TextInputLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -325,7 +327,7 @@
                     android:id="@+id/userDescription"
                     android:inputType="textMultiLine"
                     android:maxLength="500"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@color/black"
                     android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
 
