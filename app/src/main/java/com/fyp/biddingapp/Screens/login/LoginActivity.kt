@@ -55,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
             try {
                 val jsonObject = JSONObject(response)
                 if (!jsonObject.getBoolean("error")) {
-                    SharedPreferenceManager.getInstance(applicationContext).UserLogin(
+                    SharedPreferenceManager.getInstance(applicationContext)!!.UserLogin(
                             jsonObject.getInt("userId"),
                             jsonObject.getString("email"),
                             jsonObject.getString("userName")
