@@ -195,4 +195,5 @@ class UserDetailActivity : AppCompatActivity() {
 
         userDateOfBirth.setText(sdf.format(myCalendar.time))
     }
+
 }

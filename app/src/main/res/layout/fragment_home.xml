@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.fyp.biddingapp.fragments.HomeFragment">
 
@@ -16,5 +17,83 @@
         android:layout_marginEnd="20dp"
         android:src="@drawable/add"
         android:layout_marginRight="20dp" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <LinearLayout
+               android:id="@+id/one"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               android:orientation="vertical">
+               <TextView
+                   android:id="@+id/text"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10sp"
+                   android:lineSpacingMultiplier="1.5"
+                   android:padding="5sp"
+                   android:text="@string/string_text_home_fragment"
+                   android:textColor="@color/black"
+                   android:textSize="28sp"
+                   android:textStyle="bold"
+                   android:typeface="sans"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10dp"
+                   android:id="@+id/recyclerViewCategory"/>
+
+           </LinearLayout>
+
+
+           <LinearLayout
+               android:id="@+id/two"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               app:layout_constraintTop_toBottomOf="@id/one"
+               app:layout_constraintStart_toStartOf="parent"
+               android:orientation="vertical">
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10sp"
+                   android:lineSpacingMultiplier="1.5"
+                   android:padding="5sp"
+                   android:text="Recommended for you"
+                   android:textColor="@color/black"
+                   android:textSize="28sp"
+                   android:textStyle="bold"
+                   android:typeface="sans"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/recyclerViewRecommended"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10dp"/>
+
+           </LinearLayout>
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

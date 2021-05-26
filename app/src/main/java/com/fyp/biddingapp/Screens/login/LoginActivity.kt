@@ -57,8 +57,8 @@ class LoginActivity : AppCompatActivity() {
                 if (!jsonObject.getBoolean("error")) {
                     SharedPreferenceManager.getInstance(applicationContext)!!.UserLogin(
                             jsonObject.getInt("userId"),
-                            jsonObject.getString("email"),
-                            jsonObject.getString("userName")
+                            jsonObject.getString("userName"),
+                            jsonObject.getString("email")
                     )
                     progressDialog.dialog.dismiss()
                     startActivity(Intent(this@LoginActivity, UserDetailActivity::class.java))

@@ -64,7 +64,7 @@
                     app:helperText="e.g Macbook Air , Pulsar NS 200 etc.">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/addTitle"
+                        android:id="@+id/bidAddTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/white"
@@ -128,6 +128,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         style="@style/MyTextInputEditText"
                         android:layout_width="match_parent"
+                        android:id="@+id/bidDescription"
                         android:layout_height="200dp"
                         android:background="@android:color/white"
                         android:drawablePadding="15dp"
@@ -193,7 +194,7 @@
                     app:layout_constraintWidth_percent="0.48">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/userDateOfBirth"
+                        android:id="@+id/bidStartDate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/white"
@@ -220,6 +221,7 @@
                     app:layout_constraintWidth_percent="0.48">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/bidEndDate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/white"
@@ -254,7 +256,7 @@
                     app:helperText="e.g 120000, 200000, etc">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/userFirstName"
+                        android:id="@+id/bidMinAmount"
                         style="@style/MyTextInputEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -270,7 +272,7 @@
 
 
             <Button
-                android:id="@+id/userSaveDetails"
+                android:id="@+id/userSaveBidDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|bottom"
