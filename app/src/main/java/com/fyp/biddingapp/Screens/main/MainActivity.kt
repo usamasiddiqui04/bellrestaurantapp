@@ -1,14 +1,10 @@
 package com.fyp.biddingapp.Screens.main
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.fyp.biddingapp.Models.SharedPreferenceManager
 import com.fyp.biddingapp.R
-import com.fyp.biddingapp.Screens.SplashActivity
-import com.fyp.biddingapp.Screens.login.LoginActivity
 import com.fyp.biddingapp.fragments.BidFragment
 import com.fyp.biddingapp.fragments.HomeFragment
 import com.fyp.biddingapp.fragments.SettingFragment
@@ -26,11 +22,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        if (!SharedPreferenceManager.getInstance(this).loggedin()) {
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
-            return
-        }
+//        if (!SharedPreferenceManager.getInstance(this).loggedin()) {
+//            startActivity(Intent(this, LoginActivity::class.java))
+//            finish()
+//            return
+//        }
         if (savedInstanceState == null) {
 
             animatedBottomBar.selectTabById(R.id.home, true)
@@ -54,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                         fragment = BidFragment()
                         toolbar.title = "Bids"
                     }
-                    R.id.favourite ->{
+                    R.id.favourite -> {
                         fragment = WishlistFragment()
                         toolbar.title = "Favourites"
                     }
