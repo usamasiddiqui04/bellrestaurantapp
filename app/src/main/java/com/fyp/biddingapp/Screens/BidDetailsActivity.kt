@@ -1,4 +1,4 @@
-package com.fyp.biddingapp.Screens.bidsdetails
+package com.fyp.biddingapp.Screens
 
 import android.Manifest
 import android.annotation.SuppressLint

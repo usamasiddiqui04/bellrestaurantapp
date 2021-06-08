@@ -19,13 +19,13 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".Screens.bidsdetails.BidDetailsActivity" />
-        <activity android:name=".Screens.main.MainActivity">
-
-        </activity>
-        <activity android:name=".Screens.userdetails.UserDetailActivity" />
-        <activity android:name=".Screens.signup.SignupActivity" />
-        <activity android:name=".Screens.login.LoginActivity" />
+        <activity android:name=".Screens.BidOnClickActivity"></activity>
+        <activity android:name=".Screens.AllBids" />
+        <activity android:name=".Screens.BidDetailsActivity" />
+        <activity android:name=".Screens.MainActivity" />
+        <activity android:name=".Screens.UserDetailActivity" />
+        <activity android:name=".Screens.SignupActivity" />
+        <activity android:name=".Screens.LoginActivity" />
         <activity android:name=".Screens.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

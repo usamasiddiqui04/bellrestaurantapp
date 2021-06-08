@@ -1,19 +1,16 @@
 package com.fyp.biddingapp.adaptors
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.fyp.biddingapp.R
-import com.fyp.biddingapp.Screens.BidOnClickActivity
-import com.fyp.biddingapp.Screens.UserDetailActivity
 import com.fyp.biddingapp.dataclass.BidListItem
+import com.fyp.biddingapp.viewholder.AllBidViewHolder
 import com.fyp.biddingapp.viewholder.RecommendedViewHolder
 
-class RecommendedAdaptor(
+class FavouriteBidsAdaptor(
         private var context: Context, private var listOfAllBids: ArrayList<BidListItem>
 ) :
         RecyclerView.Adapter<ViewHolder>() {
@@ -21,18 +18,15 @@ class RecommendedAdaptor(
 
         return RecommendedViewHolder(
                 LayoutInflater.from(parent.context)
-                        .inflate(R.layout.recommendedlist, parent, false)
+                        .inflate(R.layout.allbiditemlayout, parent, false)
         )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         when (holder) {
-            is RecommendedViewHolder -> {
+            is AllBidViewHolder -> {
                 holder.bind(listOfAllBids[position] , context)
                 holder.itemView.setOnClickListener {
-                    val intent = Intent(context, BidOnClickActivity::class.java)
-                    intent.putExtra("bidData", listOfAllBids[position])
-                    context.startActivity(intent)
                 }
             }
         }
@@ -44,6 +38,7 @@ class RecommendedAdaptor(
 
 
     fun submitList(listOfAllBids: ArrayList<BidListItem>) {
+        this.listOfAllBids.clear()
         this.listOfAllBids = listOfAllBids
         notifyDataSetChanged()
     }

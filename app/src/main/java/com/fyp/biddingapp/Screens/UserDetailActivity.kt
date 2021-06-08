@@ -1,4 +1,4 @@
-package com.fyp.biddingapp.Screens.userdetails
+package com.fyp.biddingapp.Screens
 
 import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
@@ -18,7 +18,6 @@ import com.fyp.biddingapp.Models.Constants
 import com.fyp.biddingapp.Models.RequestHandler
 import com.fyp.biddingapp.Models.SharedPreferenceManager
 import com.fyp.biddingapp.R
-import com.fyp.biddingapp.Screens.main.MainActivity
 import kotlinx.android.synthetic.main.activity_userdetails.*
 import org.json.JSONException
 import org.json.JSONObject

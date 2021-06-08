@@ -15,7 +15,9 @@ import com.fyp.biddingapp.Models.Constants
 import com.fyp.biddingapp.Models.RequestHandler
 import com.fyp.biddingapp.Models.SharedPreferenceManager
 import com.fyp.biddingapp.R
-import com.fyp.biddingapp.Screens.bidsdetails.BidDetailsActivity
+import com.fyp.biddingapp.Screens.AllBids
+import com.fyp.biddingapp.Screens.BidDetailsActivity
+import com.fyp.biddingapp.Screens.UserDetailActivity
 import com.fyp.biddingapp.adaptors.CategoryAdaptors
 import com.fyp.biddingapp.adaptors.RecommendedAdaptor
 import com.fyp.biddingapp.dataclass.BidListItem
@@ -95,6 +97,10 @@ class HomeFragment : Fragment() {
         recommendedLinearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
         recyclerViewRecommended.layoutManager = recommendedLinearLayoutManager
         requestAllBidDataFromServer()
+
+        textViewSeeAll.setOnClickListener {
+            startActivity(Intent(requireContext(), AllBids::class.java))
+        }
     }
 
     private fun requestAllBidDataFromServer() {

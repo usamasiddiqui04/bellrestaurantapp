@@ -1,7 +1,6 @@
-package com.fyp.biddingapp.Screens.signup
+package com.fyp.biddingapp.Screens
 
 import android.annotation.SuppressLint
-import android.app.ProgressDialog
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -51,6 +50,8 @@ class SignupActivity : AppCompatActivity() {
         val Email = email!!.text.toString().trim { it <= ' ' }
         val Password = password!!.text.toString().trim { it <= ' ' }
 
+
+
         progressDialog.show(this, "Registering please wait...")
         val stringRequest: StringRequest = object : StringRequest(Method.POST,
                 Constants.URL_REGISTER, Response.Listener { response ->
@@ -78,4 +79,6 @@ class SignupActivity : AppCompatActivity() {
         }
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest)
     }
+
+
 }

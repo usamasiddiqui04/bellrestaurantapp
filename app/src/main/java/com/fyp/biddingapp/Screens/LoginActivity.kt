@@ -1,4 +1,4 @@
-package com.fyp.biddingapp.Screens.login
+package com.fyp.biddingapp.Screens
 
 import android.content.Intent
 import android.os.Build
@@ -17,8 +17,6 @@ import com.fyp.biddingapp.Models.Constants
 import com.fyp.biddingapp.Models.RequestHandler
 import com.fyp.biddingapp.Models.SharedPreferenceManager
 import com.fyp.biddingapp.R
-import com.fyp.biddingapp.Screens.signup.SignupActivity
-import com.fyp.biddingapp.Screens.userdetails.UserDetailActivity
 import com.google.android.material.textfield.TextInputEditText
 import org.json.JSONException
 import org.json.JSONObject

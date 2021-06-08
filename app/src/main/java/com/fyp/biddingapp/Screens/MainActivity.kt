@@ -1,9 +1,11 @@
-package com.fyp.biddingapp.Screens.main
+package com.fyp.biddingapp.Screens
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.fyp.biddingapp.Models.SharedPreferenceManager
 import com.fyp.biddingapp.R
 import com.fyp.biddingapp.fragments.BidFragment
 import com.fyp.biddingapp.fragments.HomeFragment
@@ -22,11 +24,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-//        if (!SharedPreferenceManager.getInstance(this).loggedin()) {
-//            startActivity(Intent(this, LoginActivity::class.java))
-//            finish()
-//            return
-//        }
+        if (!SharedPreferenceManager.getInstance(this).loggedin()) {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+            return
+        }
         if (savedInstanceState == null) {
 
             animatedBottomBar.selectTabById(R.id.home, true)
