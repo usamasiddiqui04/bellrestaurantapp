@@ -4,12 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.fyp.biddingapp.R
 import com.fyp.biddingapp.Screens.BidOnClickActivity
-import com.fyp.biddingapp.Screens.UserDetailActivity
 import com.fyp.biddingapp.dataclass.BidListItem
 import com.fyp.biddingapp.viewholder.RecommendedViewHolder
 

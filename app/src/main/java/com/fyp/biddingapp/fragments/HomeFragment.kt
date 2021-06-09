@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.volley.AuthFailureError
 import com.android.volley.Request
+import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.fyp.biddingapp.Models.Constants
 import com.fyp.biddingapp.Models.RequestHandler
@@ -19,11 +21,15 @@ import com.fyp.biddingapp.Screens.AllBids
 import com.fyp.biddingapp.Screens.BidDetailsActivity
 import com.fyp.biddingapp.Screens.UserDetailActivity
 import com.fyp.biddingapp.adaptors.CategoryAdaptors
+import com.fyp.biddingapp.adaptors.FavouriteBidsAdaptor
 import com.fyp.biddingapp.adaptors.RecommendedAdaptor
 import com.fyp.biddingapp.dataclass.BidListItem
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.favouriteBidsRecyclerView
+import kotlinx.android.synthetic.main.fragment_wishlist.*
 import org.json.JSONArray
 import org.json.JSONException
+import java.util.HashMap
 
 class HomeFragment : Fragment() {
 
@@ -38,6 +44,14 @@ class HomeFragment : Fragment() {
 
         RecommendedAdaptor(context = requireContext(), ArrayList())
     }
+
+    private var listOfFavouriteAllBids: ArrayList<BidListItem> = ArrayList()
+
+    private val favouriteBidsAdaptor by lazy {
+
+        FavouriteBidsAdaptor(requireContext(), ArrayList())
+    }
+
 
 
 
@@ -98,6 +112,11 @@ class HomeFragment : Fragment() {
         recyclerViewRecommended.layoutManager = recommendedLinearLayoutManager
         requestAllBidDataFromServer()
 
+        val linearLayoutManager = LinearLayoutManager(requireContext())
+        linearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
+        favouriteBidsRecyclerView?.layoutManager = linearLayoutManager
+        requestAllFavouriteBidDataFromServer()
+
         textViewSeeAll.setOnClickListener {
             startActivity(Intent(requireContext(), AllBids::class.java))
         }
@@ -138,6 +157,48 @@ class HomeFragment : Fragment() {
 
         RequestHandler.getInstance(requireContext()).addToRequestQueue(stringRequest)
 
+    }
+
+    private fun requestAllFavouriteBidDataFromServer() {
+        val stringRequest: StringRequest = object : StringRequest(Method.POST,
+                Constants.URL_GET_ALL_FAVOURITE, Response.Listener { response ->
+            try {
+                val pack = JSONArray(response)
+                Toast.makeText(requireContext(), pack.toString(), Toast.LENGTH_SHORT).show()
+                for (i in 0 until pack.length()) {
+                    val getBidItems = pack.getJSONObject(i)
+                    val id = getBidItems.getInt("id")
+                    val userId = getBidItems.getInt("userId")
+                    val bidStatus = getBidItems.getString("bidStatus")
+                    val bidTitle = getBidItems.getString("bidTitle")
+                    val bidImage = getBidItems.getString("bidImage")
+                    val bidStartDate = getBidItems.getString("bidStartDate")
+                    val bidDiscription = getBidItems.getString("bidDiscription")
+                    val bidMinAmount = getBidItems.getInt("bidMinAmount")
+                    val bidDuration = getBidItems.getString("bidDuration")
+                    val bidCategory = getBidItems.getString("bidCategory")
+                    val bidEndDate = getBidItems.getString("bidEndDate")
+                    val bidVerifiedAt = getBidItems.getString("bidVerifiedAt")
+                    val bidDataItem = BidListItem(bidCategory, bidDiscription, bidDuration, bidEndDate,
+                            bidImage, bidMinAmount, bidStartDate, bidStatus, bidTitle, bidVerifiedAt, id, userId)
+                    listOfFavouriteAllBids.add(bidDataItem)
+                }
+                favouriteBidsRecyclerView.adapter = favouriteBidsAdaptor
+                favouriteBidsAdaptor.submitList(listOfAllBids)
+            } catch (e: JSONException) {
+                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
+            }
+        }, Response.ErrorListener { error ->
+            Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()
+        }) {
+            @Throws(AuthFailureError::class)
+            override fun getParams(): Map<String, String> {
+                val params: MutableMap<String, String> = HashMap()
+                params["userId"] = SharedPreferenceManager.getInstance(requireContext()).userID.toString()
+                return params
+            }
+        }
+        RequestHandler.getInstance(requireContext()).addToRequestQueue(stringRequest)
     }
 
 }

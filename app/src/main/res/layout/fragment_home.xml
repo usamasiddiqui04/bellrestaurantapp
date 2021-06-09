@@ -109,6 +109,38 @@
 
            </LinearLayout>
 
+
+           <LinearLayout
+               android:id="@+id/three"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               app:layout_constraintTop_toBottomOf="@id/two"
+               app:layout_constraintStart_toStartOf="parent"
+               android:orientation="vertical">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10sp"
+                   android:lineSpacingMultiplier="1.5"
+                   android:padding="5sp"
+                   android:text="Your favourites"
+                   android:textColor="@color/black"
+                   android:textSize="28sp"
+                   android:textStyle="bold"
+                   android:typeface="sans"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"/>
+
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/favouriteBidsRecyclerView"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10dp"/>
+
+           </LinearLayout>
+
        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

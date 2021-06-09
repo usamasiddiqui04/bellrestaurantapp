@@ -16,7 +16,7 @@ class AllBidsAdaptor(
         RecyclerView.Adapter<ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-        return RecommendedViewHolder(
+        return AllBidViewHolder(
                 LayoutInflater.from(parent.context)
                         .inflate(R.layout.allbiditemlayout, parent, false)
         )

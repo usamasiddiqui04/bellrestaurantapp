@@ -25,7 +25,7 @@ class AllBids : AppCompatActivity() {
 
     private val allBidsAdaptor by lazy {
 
-        AllBidsAdaptor(this, ArrayList())
+        AllBidsAdaptor(applicationContext, ArrayList())
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
