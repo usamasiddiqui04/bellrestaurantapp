@@ -128,7 +128,7 @@ class HomeFragment : Fragment() {
                     try {
                         val pack = JSONArray(response)
                         Toast.makeText(requireContext(), pack.toString(), Toast.LENGTH_SHORT).show()
-                        for (i in 0 until pack.length()) {
+                        for (i in 0 until 4) {
                             val getBidItems = pack.getJSONObject(i)
                             val id = getBidItems.getInt("id")
                             val userId = getBidItems.getInt("userId")
@@ -165,7 +165,7 @@ class HomeFragment : Fragment() {
             try {
                 val pack = JSONArray(response)
                 Toast.makeText(requireContext(), pack.toString(), Toast.LENGTH_SHORT).show()
-                for (i in 0 until pack.length()) {
+                for (i in 0 until 4) {
                     val getBidItems = pack.getJSONObject(i)
                     val id = getBidItems.getInt("id")
                     val userId = getBidItems.getInt("userId")
