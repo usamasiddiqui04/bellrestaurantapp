@@ -107,7 +107,8 @@
     <TextView
         android:id="@+id/bidDescription"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
+        android:maxHeight="350dp"
         app:layout_constraintTop_toBottomOf="@id/addToFavourite"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="20dp"
@@ -115,27 +116,6 @@
         android:typeface="serif"
         android:lineSpacingMultiplier="1.5"
         android:text="Refined design. Outstanding power unit. Fascinating Driving Dynamics. The BMW M760Li xDrive sets unprecedented standards in every discipline. It uncompromisingly fuses the best of the BMW 7 series with the high-octane genes of BMW M, and unites fully trained athleticism with absolute luxury. The BMW M TwinPower Turbo 12-cylinder petrol engine is the only V-12 at BMW – it confidently flaunts engine-building expertise at its finest. Welcome to the winner’s enclosure."/>
-
-
-    <View
-        android:id="@+id/viewTwo"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        app:layout_constraintTop_toBottomOf="@id/bidDescription"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/grey"
-        android:layout_margin="20dp"/>
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:typeface="serif"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewTwo"
-        android:text="Set the mood for your evening. The available Panoramic Sky Lounge is the perfect complement to the Ambient Lighting, which creates a captivating experience for you and your passengers."
-        android:lineSpacingMultiplier="1.5"
-        android:layout_margin="20dp"/>
 
 
 
@@ -181,12 +161,25 @@
 
 
             <Button
+                android:id="@+id/startBid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:text="Start Bid"
+                android:layout_margin="10dp"
+                android:textAllCaps="false"
+                android:padding="10dp"/>
+
+            <Button
+                android:id="@+id/showBidData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/startBid"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Show Bids"
                 android:layout_margin="10dp"
                 android:textAllCaps="false"
                 android:padding="10dp"/>

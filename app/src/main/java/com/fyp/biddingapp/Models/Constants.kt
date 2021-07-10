@@ -10,5 +10,9 @@ object Constants {
     const val URL_IMAGES = ROOT_URL + "Images/"
     const val URL_FAVOURITE_BIDS = ROOT_URL + "favouriteBids.php"
     const val URL_GET_ALL_FAVOURITE = ROOT_URL + "getAllFavourite.php"
+    const val URL_GET_ALL_USER_DATA = ROOT_URL + "getAllUserInfo.php"
+    const val URL_UPDATE_USER_DATA = ROOT_URL + "updateUserInfo.php"
+    const val URL_ENTER_BID_AMOUNT = ROOT_URL + "enterBidAmount.php"
+    const val URL_GET_BIDDING_DATA = ROOT_URL + "getBiddingData.php"
 
 }

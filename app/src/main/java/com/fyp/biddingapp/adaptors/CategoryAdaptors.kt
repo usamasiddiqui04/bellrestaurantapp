@@ -28,6 +28,7 @@ class CategoryAdaptors(
             is ImageViewHolder -> {
                 holder.bind(listOfText[position] , listOfImages[position])
                 holder.itemView.setOnClickListener {
+
                 }
             }
         }

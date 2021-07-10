@@ -68,8 +68,6 @@ class UserDetailActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable) {
             }
         })
-
-
         val date = OnDateSetListener { view, year, monthOfYear, dayOfMonth -> // TODO Auto-generated method stub
             myCalendar.set(Calendar.YEAR, year)
             myCalendar.set(Calendar.MONTH, monthOfYear)
@@ -82,11 +80,10 @@ class UserDetailActivity : AppCompatActivity() {
                     myCalendar[Calendar.DAY_OF_MONTH]).show()
         }
 
-
-
         userSaveDetails.setOnClickListener {
             checkValidility()
         }
+
 
 
     }

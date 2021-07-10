@@ -1,11 +1,13 @@
 package com.fyp.biddingapp.adaptors
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.fyp.biddingapp.R
+import com.fyp.biddingapp.Screens.BidOnClickActivity
 import com.fyp.biddingapp.dataclass.BidListItem
 import com.fyp.biddingapp.viewholder.AllBidViewHolder
 import com.fyp.biddingapp.viewholder.RecommendedViewHolder
@@ -27,6 +29,10 @@ class AllBidsAdaptor(
             is AllBidViewHolder -> {
                 holder.bind(listOfAllBids[position] , context)
                 holder.itemView.setOnClickListener {
+                    val intent = Intent(context, BidOnClickActivity::class.java)
+                    intent.putExtra("bidData", listOfAllBids[position])
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    context.startActivity(intent)
                 }
             }
         }

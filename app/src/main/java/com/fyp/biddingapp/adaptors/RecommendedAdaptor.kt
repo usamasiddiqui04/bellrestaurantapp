@@ -30,6 +30,7 @@ class RecommendedAdaptor(
                 holder.itemView.setOnClickListener {
                     val intent = Intent(context, BidOnClickActivity::class.java)
                     intent.putExtra("bidData", listOfAllBids[position])
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                     context.startActivity(intent)
                 }
             }

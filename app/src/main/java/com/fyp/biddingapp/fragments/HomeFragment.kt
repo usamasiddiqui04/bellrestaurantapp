@@ -52,9 +52,6 @@ class HomeFragment : Fragment() {
         FavouriteBidsAdaptor(requireContext(), ArrayList())
     }
 
-
-
-
     var userName: String? = null
     var wellcomeText: String? = null
 
@@ -128,7 +125,7 @@ class HomeFragment : Fragment() {
                     try {
                         val pack = JSONArray(response)
                         Toast.makeText(requireContext(), pack.toString(), Toast.LENGTH_SHORT).show()
-                        for (i in 0 until 4) {
+                        for (i in 0 until pack.length()) {
                             val getBidItems = pack.getJSONObject(i)
                             val id = getBidItems.getInt("id")
                             val userId = getBidItems.getInt("userId")
@@ -165,7 +162,7 @@ class HomeFragment : Fragment() {
             try {
                 val pack = JSONArray(response)
                 Toast.makeText(requireContext(), pack.toString(), Toast.LENGTH_SHORT).show()
-                for (i in 0 until 4) {
+                for (i in 0 until pack.length()) {
                     val getBidItems = pack.getJSONObject(i)
                     val id = getBidItems.getInt("id")
                     val userId = getBidItems.getInt("userId")
