@@ -1,25 +1,25 @@
 package com.fyp.biddingapp.Screens
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.AuthFailureError
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.fyp.biddingapp.Models.Constants
 import com.fyp.biddingapp.Models.RequestHandler
-import com.fyp.biddingapp.Models.SharedPreferenceManager
 import com.fyp.biddingapp.R
 import com.fyp.biddingapp.adaptors.AllBidsAdaptor
 import com.fyp.biddingapp.dataclass.BidListItem
-import kotlinx.android.synthetic.main.activity_all_bids.*
-import kotlinx.android.synthetic.main.activity_all_bids.allBidsRecyclerView
 import kotlinx.android.synthetic.main.activity_category.*
-import kotlinx.android.synthetic.main.fragment_wishlist.*
 import org.json.JSONArray
 import org.json.JSONException
-import java.util.HashMap
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.Map
+import kotlin.collections.MutableMap
+import kotlin.collections.set
 
 class CategoryActivity : AppCompatActivity() {
 
@@ -35,11 +35,7 @@ class CategoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
 
-
-
         BidCategory = intent.getStringExtra("category")
-
-
 
 
         val linearLayoutManager = LinearLayoutManager(this)

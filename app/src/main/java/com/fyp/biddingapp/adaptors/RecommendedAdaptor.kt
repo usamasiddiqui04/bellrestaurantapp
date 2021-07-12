@@ -43,6 +43,7 @@ class RecommendedAdaptor(
 
 
     fun submitList(listOfAllBids: ArrayList<BidListItem>) {
+        this.listOfAllBids.clear()
         this.listOfAllBids = listOfAllBids
         notifyDataSetChanged()
     }

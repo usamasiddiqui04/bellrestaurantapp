@@ -108,7 +108,6 @@
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
 
-
         <RelativeLayout
             android:id="@+id/layoutfour"
             android:layout_width="match_parent"
@@ -142,7 +141,6 @@
                     android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint"
@@ -306,7 +304,6 @@
                 </com.google.android.material.textfield.TextInputLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/MyTextInputLayout"
                 android:layout_width="match_parent"
@@ -330,6 +327,9 @@
                     android:textColor="@color/black"
                     android:textColorHint="@android:color/darker_gray" />
             </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

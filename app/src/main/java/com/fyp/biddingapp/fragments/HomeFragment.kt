@@ -106,7 +106,7 @@ class HomeFragment : Fragment() {
 
         val recommendedLinearLayoutManager = LinearLayoutManager(requireContext())
         recommendedLinearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
-        recyclerViewRecommended.layoutManager = recommendedLinearLayoutManager
+        recyclerViewRecommended?.layoutManager = recommendedLinearLayoutManager
         requestAllBidDataFromServer()
 
         val linearLayoutManager = LinearLayoutManager(requireContext())
@@ -157,6 +157,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun requestAllFavouriteBidDataFromServer() {
+
         val stringRequest: StringRequest = object : StringRequest(Method.POST,
                 Constants.URL_GET_ALL_FAVOURITE, Response.Listener { response ->
             try {
@@ -181,7 +182,7 @@ class HomeFragment : Fragment() {
                     listOfFavouriteAllBids.add(bidDataItem)
                 }
                 favouriteBidsRecyclerView.adapter = favouriteBidsAdaptor
-                favouriteBidsAdaptor.submitList(listOfAllBids)
+                favouriteBidsAdaptor.submitList(listOfFavouriteAllBids)
             } catch (e: JSONException) {
                 Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
             }

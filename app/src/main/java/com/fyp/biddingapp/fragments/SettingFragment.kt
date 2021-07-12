@@ -38,6 +38,8 @@ class SettingFragment : Fragment() {
     var city : String? = null
     var cnic : String? = null
     var province : String? = null
+    var profileImage : String? = null
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -90,11 +92,13 @@ class SettingFragment : Fragment() {
                     phoneNumber = getBidItems.getString("phoneNumber")
                     gender = getBidItems.getString("gender")
                     dob = getBidItems.getString("dob")
+                    profileImage = getBidItems.getString("profileImage")
                     country = getBidItems.getString("country")
                     description = getBidItems.getString("description")
                     city = getBidItems.getString("city")
                     cnic = getBidItems.getString("cnic")
                     province = getBidItems.getString("province")
+
 
                     userFullName.text = "$firstName $lastName"
                     userName.text = "$firstName $lastName"
