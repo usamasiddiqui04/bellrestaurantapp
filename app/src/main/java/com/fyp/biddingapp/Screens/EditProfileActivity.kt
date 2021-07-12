@@ -107,7 +107,7 @@ class EditProfileActivity : AppCompatActivity() {
 
     private fun updateAllUserData() {
 
-        val stringRequest: StringRequest = object : StringRequest(Method.GET,
+        val stringRequest: StringRequest = object : StringRequest(Method.POST,
                 Constants.URL_UPDATE_USER_DATA, Response.Listener { response ->
             try {
                 Toast.makeText(this, response.toString(), Toast.LENGTH_SHORT).show()
@@ -120,9 +120,6 @@ class EditProfileActivity : AppCompatActivity() {
             @Throws(AuthFailureError::class)
             override fun getParams(): Map<String, String> {
                 val params: MutableMap<String, String> = HashMap()
-
-                params["userId"] = SharedPreferenceManager.getInstance(applicationContext).userID.toString()
-                params["firstName"] = userFirstName.text.toString()
                 params["firstName"] = userFirstName.text.toString()
                 params["lastName"] = userLastName.text.toString()
                 params["phoneNumber"] = userPhoneNumber.text.toString()
@@ -133,9 +130,7 @@ class EditProfileActivity : AppCompatActivity() {
                 params["city"] = userCity.text.toString()
                 params["cnic"] = userCnic.text.toString()
                 params["province"] = userProvince.text.toString()
-
-
-
+                params["userId"] = SharedPreferenceManager.getInstance(applicationContext).userID.toString()
 
                 return params
             }
