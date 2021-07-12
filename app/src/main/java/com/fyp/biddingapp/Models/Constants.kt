@@ -14,5 +14,7 @@ object Constants {
     const val URL_UPDATE_USER_DATA = ROOT_URL + "updateUserInfo.php"
     const val URL_ENTER_BID_AMOUNT = ROOT_URL + "enterBidAmount.php"
     const val URL_GET_BIDDING_DATA = ROOT_URL + "getBiddingData.php"
+    const val URL_GET_ALL_USER_BID = ROOT_URL + "getAllUserBids.php"
+    const val URL_GET_BID_BY_CATEGORY = ROOT_URL + "getBidByCategory.php"
 
 }

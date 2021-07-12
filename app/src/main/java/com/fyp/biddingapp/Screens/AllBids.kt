@@ -1,9 +1,8 @@
 package com.fyp.biddingapp.Screens
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
@@ -11,10 +10,8 @@ import com.fyp.biddingapp.Models.Constants
 import com.fyp.biddingapp.Models.RequestHandler
 import com.fyp.biddingapp.R
 import com.fyp.biddingapp.adaptors.AllBidsAdaptor
-import com.fyp.biddingapp.adaptors.RecommendedAdaptor
 import com.fyp.biddingapp.dataclass.BidListItem
 import kotlinx.android.synthetic.main.activity_all_bids.*
-import kotlinx.android.synthetic.main.fragment_home.*
 import org.json.JSONArray
 import org.json.JSONException
 

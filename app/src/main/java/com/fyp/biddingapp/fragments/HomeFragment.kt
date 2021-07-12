@@ -91,7 +91,7 @@ class HomeFragment : Fragment() {
             add(R.drawable.jewellery)
         }
         listOfText!!.apply {
-            add("Antiques")
+            add("Automotive")
             add("Car")
             add("House")
             add("Plot")

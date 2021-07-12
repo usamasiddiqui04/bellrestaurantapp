@@ -19,7 +19,8 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup">
-        <activity android:name=".Screens.EditProfileActivity"></activity>
+        <activity android:name=".Screens.CategoryActivity"></activity>
+        <activity android:name=".Screens.EditProfileActivity" />
         <activity android:name=".Screens.BidOnClickActivity" />
         <activity android:name=".Screens.AllBids" />
         <activity android:name=".Screens.BidDetailsActivity" />

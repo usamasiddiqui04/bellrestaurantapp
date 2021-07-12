@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.fyp.biddingapp.R
+import com.fyp.biddingapp.Screens.CategoryActivity
 import com.fyp.biddingapp.viewholder.ImageViewHolder
 
 class CategoryAdaptors(
@@ -28,7 +29,9 @@ class CategoryAdaptors(
             is ImageViewHolder -> {
                 holder.bind(listOfText[position] , listOfImages[position])
                 holder.itemView.setOnClickListener {
-
+                    val intent = Intent(context , CategoryActivity::class.java)
+                    intent.putExtra("category" , listOfText[position])
+                    context.startActivity(intent)
                 }
             }
         }
