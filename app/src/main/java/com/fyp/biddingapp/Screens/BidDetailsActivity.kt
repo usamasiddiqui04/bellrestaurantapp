@@ -212,16 +212,12 @@ class BidDetailsActivity : AppCompatActivity() {
             val hoursDifference = ((timeDifference / (1000 * 60 * 60)) % 24)
             val yearsDifference = (timeDifference / (1000L * 60 * 60 * 24 * 365))
             val daysDifference = ((timeDifference / (1000 * 60 * 60 * 24)) % 365)
-            duration = (yearsDifference
-                    .toString() + " years, "
-                    + daysDifference
+            duration = (daysDifference.toString()
                     + " days, "
                     + hoursDifference
                     + " hours, "
                     + minuteDifference
-                    + " minutes, "
-                    + secondDifference
-                    + " seconds")
+                    + " minutes")
 
             return duration
         } catch (e: ParseException) {
