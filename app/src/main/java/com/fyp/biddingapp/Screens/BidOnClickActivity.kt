@@ -2,10 +2,9 @@ package com.fyp.biddingapp.Screens
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.FragmentTransaction
 import com.android.volley.AuthFailureError
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -48,6 +47,10 @@ class BidOnClickActivity : AppCompatActivity() {
         bidDescription.text = bidData?.bidDiscription
         bidMinAmount.text = "Rs ${bidData?.bidMinAmount.toString()}"
 
+        bidDescription.movementMethod = ScrollingMovementMethod()
+
+
+
         addToFavourite.setOnClickListener {
             addToFavourite()
         }
@@ -55,12 +58,12 @@ class BidOnClickActivity : AppCompatActivity() {
         startBid.setOnClickListener {
             val bidAmountFragment = BidAmountFragment.newInstance()
             bidAmountFragment.setBidID(bidData?.id.toString())
-            bidAmountFragment.show(supportFragmentManager , "BidAmountFragment")
+            bidAmountFragment.show(supportFragmentManager, "BidAmountFragment")
         }
 
         showBidData.setOnClickListener {
             val showBidDataFragment = ShowBidDataFragment.newInstance()
-            showBidDataFragment.setBidID(bidData?.id.toString() , bidData!!.bidTitle)
+            showBidDataFragment.setBidID(bidData?.id.toString(), bidData!!.bidTitle)
             showBidDataFragment.show(supportFragmentManager, "ShowBidDataFragment")
         }
 
