@@ -6,5 +6,6 @@ class EachBidListItem (
         val firstName : String,
         val lastName : String,
         val bidTitle : String ,
-        val bidAMount : String
+        val bidAMount : String,
+        val profileImage : String
         )

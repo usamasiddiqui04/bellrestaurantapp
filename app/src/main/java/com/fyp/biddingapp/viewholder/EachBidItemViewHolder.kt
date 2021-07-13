@@ -16,6 +16,9 @@ class EachBidItemViewHolder(itemView: View) : ViewHolder(itemView) {
     @SuppressLint("SetTextI18n")
     fun bind(bidItem: EachBidListItem, context: Context) {
 
+        val imageUrl = "${Constants.URL_IMAGES}${bidItem.profileImage}"
+        Glide.with(context).load(imageUrl).into(itemView.personProfileImage)
+
         itemView.userName.text = "${bidItem.firstName} ${bidItem.lastName}"
         itemView.bidTitle.text = bidItem.bidTitle
         itemView.bidAmount.text = "Rs ${bidItem.bidAMount}"

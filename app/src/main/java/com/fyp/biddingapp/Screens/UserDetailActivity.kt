@@ -13,12 +13,21 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.AuthFailureError
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
+import com.bumptech.glide.Glide
 import com.example.loopdeck.progressbar.CustomProgressDialog
 import com.fyp.biddingapp.Models.Constants
 import com.fyp.biddingapp.Models.RequestHandler
 import com.fyp.biddingapp.Models.SharedPreferenceManager
 import com.fyp.biddingapp.R
 import kotlinx.android.synthetic.main.activity_userdetails.*
+import kotlinx.android.synthetic.main.activity_userdetails.userCity
+import kotlinx.android.synthetic.main.activity_userdetails.userCnic
+import kotlinx.android.synthetic.main.activity_userdetails.userCountry
+import kotlinx.android.synthetic.main.activity_userdetails.userGender
+import kotlinx.android.synthetic.main.activity_userdetails.userPhoneNumber
+import kotlinx.android.synthetic.main.activity_userdetails.userProvince
+import kotlinx.android.synthetic.main.fragment_setting.*
+import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import java.text.SimpleDateFormat
@@ -41,6 +50,12 @@ class UserDetailActivity : AppCompatActivity() {
     private val progressDialog = CustomProgressDialog()
 
     val myCalendar = Calendar.getInstance()
+
+
+    override fun onStart() {
+        super.onStart()
+        getAllUserDataFromServer()
+    }
 
 
     @RequiresApi(Build.VERSION_CODES.KITKAT_WATCH)
@@ -190,6 +205,33 @@ class UserDetailActivity : AppCompatActivity() {
         val sdf = SimpleDateFormat(myFormat, Locale.US)
 
         userDateOfBirth.setText(sdf.format(myCalendar.time))
+    }
+
+    private fun getAllUserDataFromServer() {
+
+        val stringRequest: StringRequest = object : StringRequest(Method.POST,
+                Constants.URL_GET_ALL_USER_DATA, Response.Listener { response ->
+            try {
+                val pack = JSONArray(response)
+                Toast.makeText(this, response, Toast.LENGTH_SHORT).show()
+                if (pack.length() > 0){
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                }
+            } catch (e: JSONException) {
+                Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+            }
+        }, Response.ErrorListener { error ->
+            Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show()
+        }) {
+            @Throws(AuthFailureError::class)
+            override fun getParams(): Map<String, String> {
+                val params: MutableMap<String, String> = HashMap()
+                params["userId"] = SharedPreferenceManager.getInstance(applicationContext).userID.toString()
+                return params
+            }
+        }
+        RequestHandler.getInstance(this).addToRequestQueue(stringRequest)
     }
 
 }

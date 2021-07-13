@@ -17,12 +17,14 @@ import com.android.volley.AuthFailureError
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
+import com.bumptech.glide.Glide
 import com.fyp.biddingapp.Models.Constants
 import com.fyp.biddingapp.Models.RequestHandler
 import com.fyp.biddingapp.Models.SharedPreferenceManager
 import com.fyp.biddingapp.R
 import com.fyp.biddingapp.Screens.BarChartActivity
 import com.fyp.biddingapp.Screens.EditProfileActivity
+import com.fyp.biddingapp.Screens.LoginActivity
 import com.fyp.biddingapp.Screens.PieChartActivity
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.PermissionToken
@@ -31,6 +33,7 @@ import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import kotlinx.android.synthetic.main.activity_bid_details.*
+import kotlinx.android.synthetic.main.allbiditemlayout.view.*
 import kotlinx.android.synthetic.main.fragment_setting.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -91,6 +94,12 @@ class SettingFragment : Fragment() {
             startActivity(intent)
         }
 
+        logout.setOnClickListener {
+            SharedPreferenceManager.getInstance(requireContext()).logout()
+            val intent = Intent(context , LoginActivity::class.java)
+            startActivity(intent)
+        }
+
         userProfileImage.setOnClickListener {
             Dexter.withActivity(requireActivity())
                     .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -115,13 +124,14 @@ class SettingFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_setting, container, false)
     }
 
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == 1 && resultCode == AppCompatActivity.RESULT_OK && data != null) {
             val filepath = data.data
             try {
                 val inputStream = context?.contentResolver?.openInputStream(filepath!!)
                 bitmap = BitmapFactory.decodeStream(inputStream)
-                bidImageView.setImageBitmap(bitmap)
+                userProfileImage.setImageBitmap(bitmap)
                 imageStore(bitmap!!)
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()
@@ -148,8 +158,7 @@ class SettingFragment : Fragment() {
         val stringRequest: StringRequest = object : StringRequest(Method.POST,
                 Constants.URL_UPLOAD_IMAGE, Response.Listener { response ->
             try {
-                val pack = JSONArray(response)
-                Toast.makeText(requireContext(), pack.toString(), Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(),response.toString(), Toast.LENGTH_SHORT).show()
             } catch (e: JSONException) {
                 Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
             }
@@ -188,6 +197,12 @@ class SettingFragment : Fragment() {
                     city = getBidItems.getString("city")
                     cnic = getBidItems.getString("cnic")
                     province = getBidItems.getString("province")
+
+                    if (profileImage != null)
+                    {
+                        val imageUrl = "${Constants.URL_IMAGES}${profileImage}"
+                        Glide.with(requireContext()).load(imageUrl).into(userProfileImage)
+                    }
 
 
                     userFullName.text = "$firstName $lastName"

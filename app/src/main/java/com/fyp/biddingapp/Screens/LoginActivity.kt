@@ -81,4 +81,9 @@ class LoginActivity : AppCompatActivity() {
         }
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
+    }
 }

@@ -55,6 +55,10 @@ class EditProfileActivity : AppCompatActivity() {
         cnic = intent.getStringExtra("cnic")
         province = intent.getStringExtra("province")
 
+        if (!userCountry.selectedCountryEnglishName.toString().isEmpty())
+            country = userCountry.selectedCountryEnglishName.toString()
+
+
 
         userFirstName.setText(firstName)
         userLastName.setText(lastName)
@@ -125,7 +129,7 @@ class EditProfileActivity : AppCompatActivity() {
                 params["phoneNumber"] = userPhoneNumber.text.toString()
                 params["gender"] = userGender.text.toString()
                 params["dob"] = userDateOfBirth.text.toString()
-                params["country"] = userCountry.selectedCountryEnglishName.toString()
+                params["country"] = country.toString()
                 params["description"] = userDescription.text.toString()
                 params["city"] = userCity.text.toString()
                 params["cnic"] = userCnic.text.toString()

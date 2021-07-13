@@ -86,7 +86,8 @@ class ShowBidDataFragment : BottomSheetDialogFragment() {
                     val bidId = getBidItems.getInt("id")
                     val bidTitle = getBidItems.getString("bidTitle")
                     val bidAmount = getBidItems.getString("bidAmount")
-                    val eachBidListItem = EachBidListItem(userId , bidId , firstName , lastName , bidTitle , bidAmount)
+                    val profileImage = getBidItems.getString("profileImage")
+                    val eachBidListItem = EachBidListItem(userId , bidId , firstName , lastName , bidTitle , bidAmount , profileImage)
                     listOfEachBidDataItem.add(eachBidListItem)
                 }
                 recyclerviewBidlistItem.adapter = eachBidItemsAdaptor
