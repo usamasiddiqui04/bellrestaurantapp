@@ -1,6 +1,7 @@
 package com.fyp.biddingapp.Screens
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -16,6 +17,7 @@ import com.fyp.biddingapp.Models.Constants
 import com.fyp.biddingapp.Models.RequestHandler
 import com.fyp.biddingapp.R
 import com.google.android.material.textfield.TextInputEditText
+import kotlinx.android.synthetic.main.activity_signup.*
 import org.json.JSONException
 import org.json.JSONObject
 import java.text.SimpleDateFormat
@@ -38,6 +40,10 @@ class SignupActivity : AppCompatActivity() {
         confrimpassword = findViewById(R.id.confrimpassword)
         button = findViewById(R.id.buttonregister)
         button!!.setOnClickListener(View.OnClickListener { registration() })
+
+        txt_login.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.KITKAT_WATCH)
@@ -49,7 +55,6 @@ class SignupActivity : AppCompatActivity() {
         val UserName = username!!.text.toString().trim { it <= ' ' }
         val Email = email!!.text.toString().trim { it <= ' ' }
         val Password = password!!.text.toString().trim { it <= ' ' }
-
 
 
         progressDialog.show(this, "Registering please wait...")

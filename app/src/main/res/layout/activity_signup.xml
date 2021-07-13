@@ -159,7 +159,7 @@
                     android:hint="Confirm password"
                     android:maxLines="1"
                     android:id="@+id/confrimpassword"
-                    android:inputType="numberPassword"
+                    android:inputType="textPassword"
                     android:drawableRight="@drawable/ic_outline_lock_24" />
             </com.google.android.material.textfield.TextInputLayout>
         </RelativeLayout>
