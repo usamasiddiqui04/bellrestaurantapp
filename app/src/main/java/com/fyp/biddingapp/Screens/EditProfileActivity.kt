@@ -131,7 +131,6 @@ class EditProfileActivity : AppCompatActivity() {
                 params["cnic"] = userCnic.text.toString()
                 params["province"] = userProvince.text.toString()
                 params["userId"] = SharedPreferenceManager.getInstance(applicationContext).userID.toString()
-
                 return params
             }
         }
