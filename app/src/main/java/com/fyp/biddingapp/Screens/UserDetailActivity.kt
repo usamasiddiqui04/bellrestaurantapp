@@ -117,13 +117,11 @@ class UserDetailActivity : AppCompatActivity() {
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 }
-                Toast.makeText(applicationContext, jsonObject.getString("message"), Toast.LENGTH_SHORT).show()
             } catch (e: JSONException) {
                 e.printStackTrace()
             }
         }, Response.ErrorListener { error ->
             progressDialog.dialog.dismiss()
-            Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show()
         }) {
             @Throws(AuthFailureError::class)
             override fun getParams(): Map<String, String> {
