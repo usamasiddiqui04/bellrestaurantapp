@@ -42,7 +42,7 @@ class SignupActivity : AppCompatActivity() {
         button!!.setOnClickListener(View.OnClickListener { registration() })
 
         txt_login.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
         }
     }
 

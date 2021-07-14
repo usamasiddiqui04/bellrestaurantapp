@@ -67,8 +67,6 @@ class BidOnClickActivity : AppCompatActivity() {
             showBidDataFragment.show(supportFragmentManager, "ShowBidDataFragment")
         }
 
-
-
     }
 
     private fun addToFavourite() {

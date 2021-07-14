@@ -207,10 +207,8 @@ class BidDetailsActivity : AppCompatActivity() {
             val startDate: Date = sdf.parse(start_date)
             val endDate: Date = sdf.parse(end_date)
             val timeDifference = endDate.time - startDate.time
-            val secondDifference = ((timeDifference / 1000) % 60)
             val minuteDifference = ((timeDifference / (1000 * 60)) % 60)
             val hoursDifference = ((timeDifference / (1000 * 60 * 60)) % 24)
-            val yearsDifference = (timeDifference / (1000L * 60 * 60 * 24 * 365))
             val daysDifference = ((timeDifference / (1000 * 60 * 60 * 24)) % 365)
             duration = (daysDifference.toString()
                     + " days, "
