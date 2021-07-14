@@ -159,7 +159,6 @@ class UserDetailActivity : AppCompatActivity() {
         cnic = userCnic.text.toString()
         province = userProvince.text.toString()
 
-
         if (firstName!!.isEmpty()) {
             userFirstName.error = "Please enter your first name"
             return
@@ -203,7 +202,6 @@ class UserDetailActivity : AppCompatActivity() {
         val myFormat = "yyyy-MM-dd" //In which you need put here
 
         val sdf = SimpleDateFormat(myFormat, Locale.US)
-
         userDateOfBirth.setText(sdf.format(myCalendar.time))
     }
 
@@ -213,16 +211,13 @@ class UserDetailActivity : AppCompatActivity() {
                 Constants.URL_GET_ALL_USER_DATA, Response.Listener { response ->
             try {
                 val pack = JSONArray(response)
-                Toast.makeText(this, response, Toast.LENGTH_SHORT).show()
                 if (pack.length() > 0){
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 }
             } catch (e: JSONException) {
-                Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
             }
         }, Response.ErrorListener { error ->
-            Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show()
         }) {
             @Throws(AuthFailureError::class)
             override fun getParams(): Map<String, String> {

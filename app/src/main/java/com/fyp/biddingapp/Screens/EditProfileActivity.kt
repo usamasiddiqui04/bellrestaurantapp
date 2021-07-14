@@ -114,12 +114,9 @@ class EditProfileActivity : AppCompatActivity() {
         val stringRequest: StringRequest = object : StringRequest(Method.POST,
                 Constants.URL_UPDATE_USER_DATA, Response.Listener { response ->
             try {
-                Toast.makeText(this, response.toString(), Toast.LENGTH_SHORT).show()
             } catch (e: JSONException) {
-                Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
             }
         }, Response.ErrorListener { error ->
-            Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show()
         }) {
             @Throws(AuthFailureError::class)
             override fun getParams(): Map<String, String> {

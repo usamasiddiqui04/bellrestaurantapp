@@ -15,6 +15,7 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class BarChartActivity extends AppCompatActivity {
 
@@ -73,13 +74,16 @@ public class BarChartActivity extends AppCompatActivity {
         // creating a new array list
         barEntriesArrayList = new ArrayList<>();
 
+        final int min = 0;
+        final int max = 9;
+        final int random = new Random().nextInt((max - min) + 1) + min;
         // adding new entry to our array list with bar 
         // entry and passing x and y axis value to it.
-        barEntriesArrayList.add(new BarEntry(1f, 4));
-        barEntriesArrayList.add(new BarEntry(2f, 6));
-        barEntriesArrayList.add(new BarEntry(3f, 8));
-        barEntriesArrayList.add(new BarEntry(4f, 2));
-        barEntriesArrayList.add(new BarEntry(5f, 4));
-        barEntriesArrayList.add(new BarEntry(6f, 1));
+        barEntriesArrayList.add(new BarEntry(1f, random));
+        barEntriesArrayList.add(new BarEntry(2f, random));
+        barEntriesArrayList.add(new BarEntry(3f, random));
+        barEntriesArrayList.add(new BarEntry(4f, random));
+        barEntriesArrayList.add(new BarEntry(5f, random));
+        barEntriesArrayList.add(new BarEntry(6f, random));
     }
 }

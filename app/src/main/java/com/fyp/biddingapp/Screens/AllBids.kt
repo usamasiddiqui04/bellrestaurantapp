@@ -39,7 +39,6 @@ class AllBids : AppCompatActivity() {
                 { response ->
                     try {
                         val pack = JSONArray(response)
-                        Toast.makeText(this, pack.toString(), Toast.LENGTH_SHORT).show()
                         for (i in 0 until pack.length()) {
                             val getBidItems = pack.getJSONObject(i)
                             val id = getBidItems.getInt("id")
@@ -61,10 +60,8 @@ class AllBids : AppCompatActivity() {
                         allBidsRecyclerView.adapter = allBidsAdaptor
                         allBidsAdaptor.submitList(listOfAllBids)
                     } catch (e: JSONException) {
-                        Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
                     }
                 }) { error ->
-            Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show()
         }
 
         RequestHandler.getInstance(this).addToRequestQueue(stringRequest)

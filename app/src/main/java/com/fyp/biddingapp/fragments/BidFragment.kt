@@ -51,7 +51,6 @@ class BidFragment : Fragment() {
                 Constants.URL_GET_ALL_USER_BID, Response.Listener { response ->
             try {
                 val pack = JSONArray(response)
-                Toast.makeText(requireContext(), pack.toString(), Toast.LENGTH_SHORT).show()
                 for (i in 0 until pack.length()) {
                     val getBidItems = pack.getJSONObject(i)
                     val id = getBidItems.getInt("id")
@@ -73,10 +72,8 @@ class BidFragment : Fragment() {
                 userBidsRecyclerView.adapter = getUserBidAdapter
                 getUserBidAdapter.submitList(listOfAllBids)
             } catch (e: JSONException) {
-                Toast.makeText(requireContext(), e.message, Toast.LENGTH_SHORT).show()
             }
         }, Response.ErrorListener { error ->
-            Toast.makeText(requireContext(), error.message, Toast.LENGTH_SHORT).show()
         }) {
             @Throws(AuthFailureError::class)
             override fun getParams(): Map<String, String> {

@@ -49,7 +49,6 @@ class CategoryActivity : AppCompatActivity() {
                 Constants.URL_GET_BID_BY_CATEGORY, Response.Listener { response ->
             try {
                 val pack = JSONArray(response)
-                Toast.makeText(this, pack.toString(), Toast.LENGTH_SHORT).show()
                 for (i in 0 until pack.length()) {
                     val getBidItems = pack.getJSONObject(i)
                     val id = getBidItems.getInt("id")
@@ -71,10 +70,8 @@ class CategoryActivity : AppCompatActivity() {
                 allBidsCategoryRecyclerView.adapter = allBidsAdaptor
                 allBidsAdaptor.submitList(listOfAllBids)
             } catch (e: JSONException) {
-                Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
             }
         }, Response.ErrorListener { error ->
-            Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show()
         }) {
             @Throws(AuthFailureError::class)
             override fun getParams(): Map<String, String> {

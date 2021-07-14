@@ -164,7 +164,7 @@ class BidDetailsActivity : AppCompatActivity() {
         }
 
         if (endcodedimage.isEmpty()) {
-            Toast.makeText(this, "please sekect image from gallery", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "please select image from gallery", Toast.LENGTH_SHORT).show()
             return
         }
         uploadDataToServer()
@@ -250,7 +250,6 @@ class BidDetailsActivity : AppCompatActivity() {
                 if (!jsonObject.getBoolean("error")) {
                     progressDialog.dialog.dismiss()
                 }
-                Toast.makeText(applicationContext, jsonObject.getString("message"), Toast.LENGTH_SHORT).show()
             } catch (e: JSONException) {
                 e.printStackTrace()
             }

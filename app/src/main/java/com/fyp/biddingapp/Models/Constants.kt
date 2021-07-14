@@ -17,5 +17,6 @@ object Constants {
     const val URL_GET_ALL_USER_BID = ROOT_URL + "getAllUserBids.php"
     const val URL_GET_BID_BY_CATEGORY = ROOT_URL + "getBidByCategory.php"
     const val URL_UPLOAD_IMAGE = ROOT_URL + "uploadImage.php"
+    const val URL_COUNT_LIVE_BIDS = ROOT_URL + "getUserLiveBid.php"
 
 }

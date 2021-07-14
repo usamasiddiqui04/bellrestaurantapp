@@ -14,7 +14,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.android.volley.AuthFailureError
-import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.bumptech.glide.Glide
@@ -32,8 +31,6 @@ import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
-import kotlinx.android.synthetic.main.activity_bid_details.*
-import kotlinx.android.synthetic.main.allbiditemlayout.view.*
 import kotlinx.android.synthetic.main.fragment_setting.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -152,6 +149,68 @@ class SettingFragment : Fragment() {
         fun newInstance(): SettingFragment {
             return SettingFragment()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        getUserBidCount()
+        getUserLiveBidCount()
+    }
+
+    private fun getUserBidCount() {
+        val stringRequest: StringRequest = object : StringRequest(Method.POST,
+                Constants.URL_GET_ALL_USER_BID, Response.Listener { response ->
+            try {
+                val pack = JSONArray(response)
+                if (pack.length() > 0){
+                    yourbids.text = pack.length().toString()
+                }
+                else
+                {
+                    yourbids.text = "0"
+                }
+
+            } catch (e: JSONException) {
+
+            }
+        }, Response.ErrorListener { error ->
+        }) {
+            @Throws(AuthFailureError::class)
+            override fun getParams(): Map<String, String> {
+                val params: MutableMap<String, String> = HashMap()
+                params["userId"] = SharedPreferenceManager.getInstance(requireContext()).userID.toString()
+                return params
+            }
+        }
+        RequestHandler.getInstance(requireContext()).addToRequestQueue(stringRequest)
+    }
+
+    private fun getUserLiveBidCount() {
+        val stringRequest: StringRequest = object : StringRequest(Method.POST,
+                Constants.URL_COUNT_LIVE_BIDS, Response.Listener { response ->
+            try {
+                val pack = JSONArray(response)
+                if (pack.length() > 0){
+                    livebids.text = pack.length().toString()
+                }
+                else
+                {
+                    livebids.text = "0"
+                }
+
+            } catch (e: JSONException) {
+
+            }
+        }, Response.ErrorListener { error ->
+        }) {
+            @Throws(AuthFailureError::class)
+            override fun getParams(): Map<String, String> {
+                val params: MutableMap<String, String> = HashMap()
+                params["userId"] = SharedPreferenceManager.getInstance(requireContext()).userID.toString()
+                return params
+            }
+        }
+        RequestHandler.getInstance(requireContext()).addToRequestQueue(stringRequest)
     }
 
     private fun uploadImageToServer(){
