@@ -74,16 +74,17 @@ public class BarChartActivity extends AppCompatActivity {
         // creating a new array list
         barEntriesArrayList = new ArrayList<>();
 
-        final int min = 0;
-        final int max = 9;
-        final int random = new Random().nextInt((max - min) + 1) + min;
         // adding new entry to our array list with bar 
         // entry and passing x and y axis value to it.
-        barEntriesArrayList.add(new BarEntry(1f, random));
-        barEntriesArrayList.add(new BarEntry(2f, random));
-        barEntriesArrayList.add(new BarEntry(3f, random));
-        barEntriesArrayList.add(new BarEntry(4f, random));
-        barEntriesArrayList.add(new BarEntry(5f, random));
-        barEntriesArrayList.add(new BarEntry(6f, random));
+        barEntriesArrayList.add(new BarEntry(1f, getRandomNumber(0,9)));
+        barEntriesArrayList.add(new BarEntry(2f, getRandomNumber(0,9)));
+        barEntriesArrayList.add(new BarEntry(3f, getRandomNumber(0,9)));
+        barEntriesArrayList.add(new BarEntry(4f, getRandomNumber(0,9)));
+        barEntriesArrayList.add(new BarEntry(5f, getRandomNumber(0,9)));
+        barEntriesArrayList.add(new BarEntry(6f, getRandomNumber(0,9)));
+    }
+
+    private int getRandomNumber(int min,int max) {
+        return (new Random()).nextInt((max - min) + 1) + min;
     }
 }
